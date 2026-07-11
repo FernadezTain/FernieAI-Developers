@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>FernieID API — Руководство разработчика</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -79,7 +79,9 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);-webk
 
 /* ═══ CARD ═══ */
 .card{background:rgba(20,15,32,0.55);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:1.5rem;position:relative;overflow:hidden;margin-bottom:1.25rem;transition:transform .25s ease,background .25s ease,border-color .25s ease,box-shadow .25s ease;cursor:default;}
-.card:hover{transform:scale(1.015);background:rgba(180,141,255,0.08);border-color:rgba(180,141,255,0.3);box-shadow:0 10px 28px rgba(180,141,255,0.16);}
+@media(hover:hover) and (pointer:fine){
+  .card:hover{transform:scale(1.015);background:rgba(180,141,255,0.08);border-color:rgba(180,141,255,0.3);box-shadow:0 10px 28px rgba(180,141,255,0.16);}
+}
 .card::before{content:'';position:absolute;top:0;left:6%;right:6%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.25) 40%,rgba(255,255,255,0.5) 50%,rgba(255,255,255,0.25) 60%,transparent);}
 
 /* ═══ ENDPOINT CARD ═══ */
@@ -100,7 +102,10 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);-webk
 .ep-inner{padding:0 1.25rem 1.25rem;border-top:1px solid rgba(255,255,255,0.06);}
 .ep-inner p{margin:1rem 0 .9rem;}
 .ep-tag{font-size:.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin:1rem 0 .5rem;}
-.param-table{width:100%;border-collapse:collapse;margin-bottom:.5rem;}
+.param-table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:.5rem;}
+.param-table-wrap::-webkit-scrollbar{height:6px;}
+.param-table-wrap::-webkit-scrollbar-thumb{background:rgba(180,141,255,0.25);border-radius:100px;}
+.param-table{width:100%;min-width:480px;border-collapse:collapse;margin-bottom:0;}
 .param-table th{text-align:left;font-size:.6rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);padding:6px 10px;border-bottom:1px solid rgba(255,255,255,0.08);}
 .param-table td{padding:8px 10px;font-size:.78rem;color:var(--muted2);border-bottom:1px solid rgba(255,255,255,0.04);vertical-align:top;}
 .param-table td.pname{font-family:'JetBrains Mono',monospace;color:#e8dcff;font-size:.76rem;}
@@ -122,7 +127,9 @@ code{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;col
 
 /* ═══ CALLOUTS ═══ */
 .callout{display:flex;gap:12px;padding:1rem 1.15rem;border-radius:13px;margin:1.25rem 0;max-width:760px;transition:transform .25s ease,filter .25s ease,box-shadow .25s ease;cursor:default;}
-.callout:hover{transform:scale(1.015);filter:brightness(1.25);box-shadow:0 8px 22px rgba(0,0,0,0.25);}
+@media(hover:hover) and (pointer:fine){
+  .callout:hover{transform:scale(1.015);filter:brightness(1.25);box-shadow:0 8px 22px rgba(0,0,0,0.25);}
+}
 .callout-ico{font-size:1.05rem;flex-shrink:0;}
 .callout-text{font-size:.82rem;line-height:1.7;color:rgba(255,255,255,.78);}
 .callout-text b{color:#fff;}
@@ -143,19 +150,26 @@ code{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;col
 /* ═══ TYPE CARDS GRID (для типов приложений) ═══ */
 .type-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.6rem;max-width:760px;margin-bottom:1.5rem;}
 .type-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:.85rem .5rem;text-align:center;transition:transform .25s ease,background .25s ease,border-color .25s ease,box-shadow .25s ease;cursor:default;}
-.type-card:hover{transform:scale(1.08);background:rgba(180,141,255,0.1);border-color:rgba(180,141,255,0.35);box-shadow:0 8px 24px rgba(180,141,255,0.18);}
+@media(hover:hover) and (pointer:fine){
+  .type-card:hover{transform:scale(1.08);background:rgba(180,141,255,0.1);border-color:rgba(180,141,255,0.35);box-shadow:0 8px 24px rgba(180,141,255,0.18);}
+}
 .type-ico{font-size:1.3rem;margin-bottom:.3rem;}
 .type-lbl{font-size:.68rem;font-weight:600;color:var(--muted2);}
 
 /* ═══ ERROR TABLE ═══ */
-.err-table{width:100%;border-collapse:collapse;max-width:760px;margin-bottom:1.5rem;}
+.err-table-wrap{width:100%;max-width:760px;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:1.5rem;}
+.err-table-wrap::-webkit-scrollbar{height:6px;}
+.err-table-wrap::-webkit-scrollbar-thumb{background:rgba(180,141,255,0.25);border-radius:100px;}
+.err-table{width:100%;min-width:480px;border-collapse:collapse;margin-bottom:0;}
 .err-table th{text-align:left;font-size:.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);padding:9px 12px;border-bottom:1px solid rgba(255,255,255,0.09);}
 .err-table td{padding:11px 12px;font-size:.82rem;color:var(--muted2);border-bottom:1px solid rgba(255,255,255,0.05);}
 .err-table td.errcode{font-family:'JetBrains Mono',monospace;color:var(--red);font-size:.78rem;}
 
 /* ═══ SDK METHOD CARD ═══ */
 .sdk-method{background:rgba(20,15,32,0.55);border:1px solid rgba(255,255,255,0.08);border-radius:15px;padding:1.25rem 1.4rem;margin-bottom:1rem;max-width:760px;transition:transform .25s ease,background .25s ease,border-color .25s ease,box-shadow .25s ease;cursor:default;}
-.sdk-method:hover{transform:scale(1.02);background:rgba(180,141,255,0.09);border-color:rgba(180,141,255,0.32);box-shadow:0 8px 24px rgba(180,141,255,0.16);}
+@media(hover:hover) and (pointer:fine){
+  .sdk-method:hover{transform:scale(1.02);background:rgba(180,141,255,0.09);border-color:rgba(180,141,255,0.32);box-shadow:0 8px 24px rgba(180,141,255,0.16);}
+}
 .sdk-sig{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:#c8acff;margin-bottom:.6rem;font-weight:600;}
 .sdk-sig .fn{color:#fff;}
 .sdk-desc{font-size:.83rem;color:var(--muted2);line-height:1.7;}
@@ -173,15 +187,29 @@ code{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;col
 @media(max-width:980px){
   .sidebar{position:fixed;left:0;top:64px;bottom:0;width:270px;background:rgba(8,2,15,0.98);backdrop-filter:blur(20px);z-index:190;transform:translateX(-100%);transition:transform .25s ease;border-right:1px solid rgba(180,141,255,0.15);}
   .sidebar.open{transform:translateX(0);}
-  .tb-menu-toggle{display:block;}
+  .tb-menu-toggle{display:block;flex-shrink:0;}
   .main{padding:1.5rem 1.25rem 6rem;}
   .type-grid{grid-template-columns:repeat(3,1fr);}
+}
+@media(max-width:640px){
+  .topbar{padding:0 1rem;gap:.5rem;}
+  .tb-logo{font-size:.95rem;gap:6px;}
+  .tb-badge{display:none;}
+  .tb-btn{font-size:.7rem;padding:7px 12px;}
+  .hero-actions{flex-direction:column;align-items:stretch;}
+  .hero-btn{justify-content:center;}
+  .sdk-method{padding:1rem 1.1rem;}
+  .code-tabs-nav{flex-wrap:wrap;}
+  .code-tab-btn{flex:1 1 auto;text-align:center;padding:7px 8px;}
+  .card{padding:1.15rem;}
+  .callout{padding:.9rem .95rem;flex-direction:column;}
+  .param-table th,.param-table td,.err-table th,.err-table td{white-space:nowrap;}
 }
 @media(max-width:560px){
   .type-grid{grid-template-columns:repeat(2,1fr);}
   .hero h1{font-size:1.9rem;}
+  .doc-section h2{font-size:1.35rem;flex-wrap:wrap;}
 }
-
 /* ═══ CSS-ИКОНКИ ═══ */
 .cico{display:inline-block;position:relative;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;}
 .cico::before,.cico::after{content:'';position:absolute;box-sizing:border-box;}
@@ -521,12 +549,12 @@ console.<span class="tok-fn">log</span>(<span class="tok-str">'Вошёл как
         <div class="ep-body"><div class="ep-inner">
           <p>Проверяет логин/пароль. Если Telegram привязан — отправляет код и возвращает <code class="inline">require2fa: true</code>, вход завершается только после <code class="inline">/api/auth/verify-2fa</code>. Если Telegram не привязан — пускает сразу.</p>
           <div class="ep-tag">Параметры тела запроса</div>
-          <table class="param-table">
+          <div class="param-table-wrap"><table class="param-table">
             <tr><th>Поле</th><th>Тип</th><th>Описание</th></tr>
             <tr><td class="pname">apiKey<span class="param-req">обязателен</span></td><td>string</td><td>Твой API-ключ</td></tr>
             <tr><td class="pname">username<span class="param-req">обязателен</span></td><td>string</td><td>Логин FernieID</td></tr>
             <tr><td class="pname">password<span class="param-req">обязателен</span></td><td>string</td><td>Пароль</td></tr>
-          </table>
+          </table></div>
           <p>Значения <code class="inline">username</code> и <code class="inline">password</code> берутся из полей формы логина на твоей странице — их вводит сам пользователь, в коде они не прописываются заранее.</p>
           <div class="code-wrap">
             <div class="code-head"><span class="code-lang">html</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
@@ -643,12 +671,12 @@ API_KEY = <span class="tok-str">"fid_твой_ключ"</span>
         <div class="ep-body"><div class="ep-inner">
           <p>Финальный шаг входа. При успехе возвращает полные данные пользователя, а в Telegram улетает уведомление об успешном входе.</p>
           <div class="ep-tag">Параметры тела запроса</div>
-          <table class="param-table">
+          <div class="param-table-wrap"><table class="param-table">
             <tr><th>Поле</th><th>Тип</th><th>Описание</th></tr>
             <tr><td class="pname">apiKey<span class="param-req">обязателен</span></td><td>string</td><td>Твой API-ключ</td></tr>
             <tr><td class="pname">userId<span class="param-req">обязателен</span></td><td>number</td><td>Из ответа <code class="inline">/api/auth/login</code></td></tr>
             <tr><td class="pname">code<span class="param-req">обязателен</span></td><td>string</td><td>6-значный код из Telegram</td></tr>
-          </table>
+          </table></div>
           <p>Функция <code class="inline">showCodeInput(userId)</code> из предыдущего шага показывает поле для кода — значение <code class="inline">code</code> берётся из него, когда пользователь ввёл цифры и нажал подтвердить.</p>
           <div class="code-wrap">
             <div class="code-head"><span class="code-lang">html</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
@@ -750,10 +778,10 @@ API_KEY = <span class="tok-str">"fid_твой_ключ"</span>
         <div class="ep-body"><div class="ep-inner">
           <p>Заодно увеличивает счётчики <code class="inline">requests_total</code> / <code class="inline">requests_today</code> у ключа и пишет запись в его лог.</p>
           <div class="ep-tag">Параметры тела запроса</div>
-          <table class="param-table">
+          <div class="param-table-wrap"><table class="param-table">
             <tr><th>Поле</th><th>Тип</th><th>Описание</th></tr>
             <tr><td class="pname">key<span class="param-req">обязателен</span></td><td>string</td><td>API-ключ для проверки</td></tr>
-          </table>
+          </table></div>
           <div class="code-tabs" data-tabs>
             <div class="code-tabs-nav">
               <button class="code-tab-btn active" data-lang="javascript" onclick="switchTab(this)">JavaScript</button>
@@ -820,12 +848,12 @@ data = requests.<span class="tok-fn">post</span>(
         <div class="ep-body"><div class="ep-inner">
           <p>Пользователь должен быть найден по <code class="inline">username</code> и иметь привязанный Telegram — иначе вернётся ошибка <code class="inline">no_telegram</code> со ссылкой на привязку.</p>
           <div class="ep-tag">Параметры тела запроса</div>
-          <table class="param-table">
+          <div class="param-table-wrap"><table class="param-table">
             <tr><th>Поле</th><th>Тип</th><th>Описание</th></tr>
             <tr><td class="pname">apiKey<span class="param-req">обязателен</span></td><td>string</td><td>Твой API-ключ</td></tr>
             <tr><td class="pname">username<span class="param-req">обязателен</span></td><td>string</td><td>Логин пользователя FernieID</td></tr>
             <tr><td class="pname">fields<span class="param-opt">опционально</span></td><td>string[]</td><td>Например <code class="inline">['dc','seeds']</code>. По умолчанию — все известные поля.</td></tr>
-          </table>
+          </table></div>
           <div class="code-tabs" data-tabs>
             <div class="code-tabs-nav">
               <button class="code-tab-btn active" data-lang="javascript" onclick="switchTab(this)">JavaScript</button>
@@ -900,14 +928,14 @@ data = requests.<span class="tok-fn">post</span>(
         </div>
         <div class="ep-body"><div class="ep-inner">
           <div class="ep-tag">Параметры тела запроса</div>
-          <table class="param-table">
+          <div class="param-table-wrap"><table class="param-table">
             <tr><th>Поле</th><th>Тип</th><th>Описание</th></tr>
             <tr><td class="pname">apiKey<span class="param-req">обязателен</span></td><td>string</td><td>Твой API-ключ</td></tr>
             <tr><td class="pname">username<span class="param-req">обязателен</span></td><td>string</td><td>Логин пользователя</td></tr>
             <tr><td class="pname">currency<span class="param-req">обязателен</span></td><td>string</td><td><code class="inline">"dc"</code> или <code class="inline">"seeds"</code></td></tr>
             <tr><td class="pname">amount<span class="param-req">обязателен</span></td><td>number</td><td>Сумма операции</td></tr>
             <tr><td class="pname">action<span class="param-req">обязателен</span></td><td>string</td><td><code class="inline">"add"</code> (только тип «Бот») или <code class="inline">"spend"</code></td></tr>
-          </table>
+          </table></div>
           <div class="code-tabs" data-tabs>
             <div class="code-tabs-nav">
               <button class="code-tab-btn active" data-lang="javascript" onclick="switchTab(this)">JavaScript</button>
@@ -989,7 +1017,7 @@ data = requests.<span class="tok-fn">post</span>(
         </div>
         <div class="ep-body"><div class="ep-inner">
           <div class="ep-tag">Параметры тела запроса</div>
-          <table class="param-table">
+          <div class="param-table-wrap"><table class="param-table">
             <tr><th>Поле</th><th>Тип</th><th>Описание</th></tr>
             <tr><td class="pname">apiKey<span class="param-req">обязателен</span></td><td>string</td><td>Твой API-ключ</td></tr>
             <tr><td class="pname">messages<span class="param-req">обязателен</span></td><td>array</td><td><code class="inline">[{ role: 'user', content: '...' }]</code></td></tr>
@@ -997,7 +1025,7 @@ data = requests.<span class="tok-fn">post</span>(
             <tr><td class="pname">userId<span class="param-opt">опционально</span></td><td>number</td><td>ID пользователя FernieID — даёт больший дневной лимит токенов вместо анонимного</td></tr>
             <tr><td class="pname">max_tokens<span class="param-opt">опционально</span></td><td>number</td><td>По умолчанию 8192</td></tr>
             <tr><td class="pname">stream<span class="param-opt">опционально</span></td><td>boolean</td><td><code class="inline">false</code> для этого эндпоинта</td></tr>
-          </table>
+          </table></div>
           <div class="code-tabs" data-tabs>
             <div class="code-tabs-nav">
               <button class="code-tab-btn active" data-lang="javascript" onclick="switchTab(this)">JavaScript</button>
@@ -1188,13 +1216,12 @@ data = requests.<span class="tok-fn">post</span>(
       <h2><span class="sec-num">12</span> Лимиты токенов</h2>
       <p class="lead">У AI-чата суточные лимиты в токенах, привязанные к пользователю FernieID (или к самому API-ключу для анонимных запросов).</p>
 
-      <table class="err-table">
+      <div class="err-table-wrap"><table class="err-table">
         <tr><th>Категория</th><th>Лимит в сутки</th></tr>
         <tr><td>Обычный пользователь FernieID</td><td>200 000 токенов</td></tr>
         <tr><td>Пользователь с подпиской Fernie+</td><td>1 500 000 токенов</td></tr>
         <tr><td>Анонимный запрос (без <code class="inline">userId</code>, только по ключу)</td><td>50 000 токенов на ключ</td></tr>
-      </table>
-
+      </table></div>
       <div class="endpoint" data-ep>
         <div class="ep-head" onclick="toggleEp(this)">
           <span class="ep-method get">GET</span>
@@ -1259,10 +1286,10 @@ data = requests.<span class="tok-fn">post</span>(
         </div>
         <div class="ep-body"><div class="ep-inner">
           <div class="ep-tag">Query-параметры</div>
-          <table class="param-table">
+          <div class="param-table-wrap"><table class="param-table">
             <tr><th>Поле</th><th>Тип</th><th>Описание</th></tr>
             <tr><td class="pname">q<span class="param-req">обязателен</span></td><td>string</td><td>Поисковый запрос</td></tr>
-          </table>
+          </table></div>
           <div class="code-tabs" data-tabs>
             <div class="code-tabs-nav">
               <button class="code-tab-btn active" data-lang="javascript" onclick="switchTab(this)">JavaScript</button>
@@ -1315,11 +1342,11 @@ data = requests.<span class="tok-fn">post</span>(
         </div>
         <div class="ep-body"><div class="ep-inner">
           <div class="ep-tag">Параметры тела запроса</div>
-          <table class="param-table">
+          <div class="param-table-wrap"><table class="param-table">
             <tr><th>Поле</th><th>Тип</th><th>Описание</th></tr>
             <tr><td class="pname">telegram_id<span class="param-req">обязателен</span></td><td>string|number</td><td>Telegram ID получателя</td></tr>
             <tr><td class="pname">text<span class="param-req">обязателен</span></td><td>string</td><td>Текст сообщения, поддерживает HTML-разметку Telegram (<code class="inline">&lt;b&gt;</code>, <code class="inline">&lt;i&gt;</code>, <code class="inline">&lt;blockquote&gt;</code>)</td></tr>
-          </table>
+          </table></div>
           <div class="code-tabs" data-tabs>
             <div class="code-tabs-nav">
               <button class="code-tab-btn active" data-lang="javascript" onclick="switchTab(this)">JavaScript</button>
@@ -1375,7 +1402,7 @@ data = requests.<span class="tok-fn">post</span>(
       <h2><span class="sec-num">15</span> Коды ошибок</h2>
       <p class="lead">Почти все эндпоинты возвращают HTTP 200 с полем <code class="inline">success: false</code> и текстом ошибки в <code class="inline">error</code> — исключение составляет <code class="inline">/api/chat</code>, где используются настоящие HTTP-статусы.</p>
 
-      <table class="err-table">
+      <div class="err-table-wrap"><table class="err-table">
         <tr><th>Ошибка</th><th>Где встречается</th><th>Что значит</th></tr>
         <tr><td class="errcode">no_telegram</td><td>balance/get, edit/balance, cases/buy</td><td>У пользователя не привязан Telegram</td></tr>
         <tr><td class="errcode">not_registered</td><td>balance/get</td><td>Пользователь с таким логином не найден</td></tr>
@@ -1384,7 +1411,7 @@ data = requests.<span class="tok-fn">post</span>(
         <tr><td class="errcode">jailbreak_detected</td><td>chat (HTTP 400)</td><td>Сообщение попало под фильтр защиты от джейлбрейков</td></tr>
         <tr><td class="errcode">— (HTTP 429)</td><td>chat</td><td>Превышен суточный лимит токенов</td></tr>
         <tr><td class="errcode">— (HTTP 401)</td><td>chat</td><td>Не передан или недействителен API-ключ</td></tr>
-      </table>
+      </table></div>
 
       <div class="callout danger">
         <div class="callout-ico"><span class="cico cico-forbidden"></span></div>
