@@ -177,6 +177,108 @@ code{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;col
   .type-grid{grid-template-columns:repeat(2,1fr);}
   .hero h1{font-size:1.9rem;}
 }
+
+/* ═══ CSS-ИКОНКИ ═══ */
+.cico{display:inline-block;position:relative;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;}
+.cico::before,.cico::after{content:'';position:absolute;box-sizing:border-box;}
+
+.cico-key{color:#c8acff;animation:cicoWiggle 3s ease-in-out infinite;}
+.cico-key::before{width:.5em;height:.5em;top:0;left:0;border:.1em solid currentColor;border-radius:50%;}
+.cico-key::after{width:.5em;height:.1em;top:.4em;left:.35em;background:currentColor;box-shadow:.15em .16em 0 0 currentColor,.3em .16em 0 0 currentColor;}
+@keyframes cicoWiggle{0%,80%,100%{transform:rotate(0)}85%{transform:rotate(-15deg)}92%{transform:rotate(10deg)}}
+
+.cico-book::before{width:.85em;height:.65em;top:.15em;left:.05em;border:.09em solid #7eb8ff;border-radius:.08em;}
+.cico-book::after{width:.09em;height:.65em;top:.15em;left:.45em;background:#7eb8ff;}
+
+.cico-bolt{color:var(--orange);animation:cicoFlicker 2.2s ease-in-out infinite;}
+.cico-bolt::before{width:0;height:0;top:0;left:.1em;border-style:solid;border-width:0 .12em .5em .3em;border-color:transparent transparent currentColor transparent;}
+.cico-bolt::after{width:0;height:0;top:.38em;left:.05em;border-style:solid;border-width:.5em .3em 0 .12em;border-color:currentColor transparent transparent transparent;}
+@keyframes cicoFlicker{0%,100%{opacity:1}45%{opacity:1}50%{opacity:.4}55%{opacity:1}}
+
+.cico-box::before{width:.85em;height:.6em;top:.2em;left:.05em;border:.08em solid var(--orange);border-radius:.06em;}
+.cico-box::after{width:.85em;height:.08em;top:.44em;left:.05em;background:var(--orange);}
+
+.cico-lock::before{width:.4em;height:.35em;top:.15em;left:0;border:.09em solid #b48dff;border-bottom:none;border-radius:.35em .35em 0 0;}
+.cico-lock::after{width:.6em;height:.42em;top:.4em;left:-.1em;background:#b48dff;border-radius:.08em;}
+
+.cico-mail{animation:cicoShake 3.5s ease-in-out infinite;}
+.cico-mail::before{width:.9em;height:.62em;top:.19em;left:.05em;border:.08em solid #ff9ed2;border-radius:.06em;}
+.cico-mail::after{width:.55em;height:.55em;top:.19em;left:.23em;border-left:.08em solid #ff9ed2;border-top:.08em solid #ff9ed2;transform:rotate(45deg);}
+@keyframes cicoShake{0%,90%,100%{transform:rotate(0)}92%{transform:rotate(-8deg)}96%{transform:rotate(8deg)}}
+
+.cico-check{color:var(--teal);animation:cicoPop 2.6s ease-in-out infinite;}
+.cico-check::before{width:.85em;height:.85em;top:.05em;left:.05em;border:.09em solid currentColor;border-radius:50%;}
+.cico-check::after{width:.4em;height:.22em;top:.3em;left:.22em;border-left:.1em solid currentColor;border-bottom:.1em solid currentColor;transform:rotate(-45deg);}
+@keyframes cicoPop{0%,80%,100%{transform:scale(1)}88%{transform:scale(1.2)}}
+
+.cico-coin::before{width:.9em;height:.9em;top:.05em;left:.05em;border-radius:50%;background:linear-gradient(135deg,#ffd77a,#ffb87a);}
+.cico-coin::after{content:'$';position:absolute;top:.03em;left:.24em;font-size:.6em;font-weight:800;color:#5a3d00;}
+
+.cico-pencil::before{width:.9em;height:.18em;top:.4em;left:.05em;background:#ffb87a;transform:rotate(-40deg);border-radius:.05em;}
+.cico-pencil::after{width:0;height:0;top:.72em;left:.02em;border-style:solid;border-width:.1em .16em 0 0;border-color:#c8acff transparent transparent transparent;transform:rotate(-40deg);}
+
+.cico-chat::before{width:.9em;height:.65em;top:.05em;left:.05em;background:#7eb8ff;border-radius:.2em .2em .2em .02em;}
+.cico-chat::after{width:0;height:0;top:.62em;left:.1em;border-style:solid;border-width:.15em .15em 0 0;border-color:#7eb8ff transparent transparent transparent;}
+
+.cico-wave::before,.cico-wave::after{width:.22em;height:.22em;border-radius:50%;background:var(--teal);top:.4em;animation:cicoWaveMv 1.4s ease-in-out infinite;}
+.cico-wave::before{left:.1em;}
+.cico-wave::after{left:.5em;animation-delay:.25s;}
+@keyframes cicoWaveMv{0%,100%{transform:translateY(0)}50%{transform:translateY(-.35em)}}
+
+.cico-chart::before{width:.16em;height:.4em;top:.45em;left:.1em;background:#7eb8ff;box-shadow:.3em -.15em 0 0 #7eb8ff,.6em -.3em 0 0 #7eb8ff;animation:cicoBars 2s ease-in-out infinite;}
+@keyframes cicoBars{0%,100%{opacity:.6}50%{opacity:1}}
+
+.cico-search::before{width:.55em;height:.55em;top:0;left:0;border:.1em solid #4ecdc4;border-radius:50%;}
+.cico-search::after{width:.35em;height:.1em;top:.55em;left:.5em;background:#4ecdc4;transform:rotate(45deg);border-radius:.1em;}
+
+.cico-plane{color:#7eb8ff;animation:cicoFly 3s ease-in-out infinite;}
+.cico-plane::before{width:0;height:0;top:.1em;left:0;border-style:solid;border-width:.25em .9em .25em 0;border-color:transparent currentColor transparent transparent;transform:rotate(20deg);}
+@keyframes cicoFly{0%,100%{transform:translate(0,0)}50%{transform:translate(.15em,-.1em)}}
+
+.cico-warn{color:var(--orange);animation:cicoPulseColor 2s ease-in-out infinite;}
+.cico-warn::before{width:0;height:0;top:0;left:0;border-style:solid;border-width:0 .5em .85em .5em;border-color:transparent transparent currentColor transparent;}
+.cico-warn::after{content:'!';position:absolute;top:.28em;left:.36em;font-size:.55em;font-weight:800;color:#08020f;}
+@keyframes cicoPulseColor{0%,100%{opacity:1}50%{opacity:.55}}
+
+.cico-shield::before{width:.75em;height:.85em;top:0;left:.1em;background:var(--teal);clip-path:polygon(50% 0,100% 20%,100% 55%,50% 100%,0 55%,0 20%);}
+
+.cico-question::before{content:'?';position:absolute;top:-.05em;left:.22em;font-size:.9em;font-weight:800;color:#c8acff;}
+
+.cico-globe::before{width:.85em;height:.85em;top:.05em;left:.05em;border:.09em solid #7eb8ff;border-radius:50%;}
+.cico-globe::after{width:.85em;height:.09em;top:.46em;left:.05em;background:#7eb8ff;box-shadow:0 -.28em 0 -.03em #7eb8ff,0 .28em 0 -.03em #7eb8ff;}
+
+.cico-mobile::before{width:.5em;height:.85em;top:.05em;left:.25em;border:.08em solid #b48dff;border-radius:.1em;}
+.cico-mobile::after{width:.16em;height:.16em;top:.66em;left:.42em;border-radius:50%;background:#b48dff;}
+
+.cico-robot::before{width:.75em;height:.6em;top:.2em;left:.12em;background:#ff9ed2;border-radius:.15em;}
+.cico-robot::after{width:.14em;height:.14em;top:.4em;left:.3em;border-radius:50%;background:#08020f;box-shadow:.3em 0 0 0 #08020f;}
+
+.cico-gamepad::before{width:1em;height:.5em;top:.25em;left:0;background:#a8e6b8;border-radius:.3em;}
+.cico-gamepad::after{width:.14em;height:.14em;top:.42em;left:.65em;border-radius:50%;background:#08020f;box-shadow:-.22em 0 0 0 #08020f;}
+
+.cico-gear{color:var(--muted2);animation:cicoSpin 4s linear infinite;}
+.cico-gear::before{width:.9em;height:.9em;top:.05em;left:.05em;background:repeating-conic-gradient(currentColor 0 20deg,transparent 20deg 45deg);border-radius:50%;-webkit-mask:radial-gradient(circle,transparent 55%,#000 58%);mask:radial-gradient(circle,transparent 55%,#000 58%);}
+@keyframes cicoSpin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+.cico-bulb{color:#ffe08a;animation:cicoGlow 2.4s ease-in-out infinite;}
+.cico-bulb::before{width:.6em;height:.6em;top:0;left:.2em;border-radius:50%;background:currentColor;}
+.cico-bulb::after{width:.3em;height:.22em;top:.62em;left:.35em;background:rgba(255,255,255,.5);border-radius:.05em;}
+@keyframes cicoGlow{0%,100%{filter:drop-shadow(0 0 1px #ffe08a)}50%{filter:drop-shadow(0 0 6px #ffe08a)}}
+
+.cico-forbidden{color:var(--red);animation:cicoPulseColor 1.6s ease-in-out infinite;}
+.cico-forbidden::before{width:.85em;height:.85em;top:.05em;left:.05em;border:.1em solid currentColor;border-radius:50%;}
+.cico-forbidden::after{width:.85em;height:.1em;top:.45em;left:.05em;background:currentColor;transform:rotate(45deg);}
+
+/* ═══ CODE TABS ═══ */
+.code-tabs{margin:.75rem 0 1.25rem;max-width:760px;}
+.code-tabs-nav{display:flex;gap:.35rem;}
+.code-tab-btn{font-family:'JetBrains Mono',monospace;font-size:.64rem;font-weight:600;letter-spacing:.8px;text-transform:uppercase;padding:7px 14px;border-radius:9px 9px 0 0;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-bottom:none;color:var(--muted);cursor:pointer;transition:all .18s;position:relative;top:1px;}
+.code-tab-btn:hover{color:#fff;}
+.code-tab-btn.active{background:#0a0512;color:#c8acff;border-color:rgba(180,141,255,0.28);}
+.code-tab-panel{display:none;}
+.code-tab-panel.active{display:block;}
+.code-tab-panel .code-wrap{margin-top:0;border-radius:0 13px 13px 13px;}
+.tok-ts{color:#ffd77a;}
 </style>
 </head>
 <body>
@@ -188,7 +290,7 @@ code{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;col
     <div class="tb-logo" style="margin-left:.5rem;"><div class="tb-dot"></div>FernieID <span class="tb-badge">API Docs</span></div>
   </div>
   <div class="tb-right">
-    <a href="https://ferniex-id.vercel.app" class="tb-btn">🔑 Личный кабинет</a>
+    <a href="https://ferniex-id.vercel.app" class="tb-btn"><span class="cico cico-key"></span> Личный кабинет</a>
   </div>
 </header>
 
@@ -197,38 +299,38 @@ code{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;col
   <aside class="sidebar" id="sidebar">
     <div class="side-group">
       <div class="side-label">Начало работы</div>
-      <a class="side-link" data-target="intro"><span class="side-ico">📘</span>Введение</a>
-      <a class="side-link" data-target="quickstart"><span class="side-ico">⚡</span>Быстрый старт</a>
-      <a class="side-link" data-target="keys"><span class="side-ico">🔑</span>Получение ключа</a>
-      <a class="side-link" data-target="sdk"><span class="side-ico">📦</span>Подключение SDK</a>
+      <a class="side-link" data-target="intro"><span class="side-ico"><span class="cico cico-book"></span></span>Введение</a>
+      <a class="side-link" data-target="quickstart"><span class="side-ico"><span class="cico cico-bolt"></span></span>Быстрый старт</a>
+      <a class="side-link" data-target="keys"><span class="side-ico"><span class="cico cico-key"></span></span>Получение ключа</a>
+      <a class="side-link" data-target="sdk"><span class="side-ico"><span class="cico cico-box"></span></span>Подключение SDK</a>
     </div>
     <div class="side-group">
       <div class="side-label">Аутентификация</div>
-      <a class="side-link" data-target="auth-login"><span class="side-ico">🔐</span>Вход пользователя</a>
-      <a class="side-link" data-target="auth-2fa"><span class="side-ico">📨</span>Подтверждение 2FA</a>
-      <a class="side-link" data-target="auth-verify"><span class="side-ico">✅</span>Проверка ключа</a>
+      <a class="side-link" data-target="auth-login"><span class="side-ico"><span class="cico cico-lock"></span></span>Вход пользователя</a>
+      <a class="side-link" data-target="auth-2fa"><span class="side-ico"><span class="cico cico-mail"></span></span>Подтверждение 2FA</a>
+      <a class="side-link" data-target="auth-verify"><span class="side-ico"><span class="cico cico-check"></span></span>Проверка ключа</a>
     </div>
     <div class="side-group">
       <div class="side-label">Баланс и валюты</div>
-      <a class="side-link" data-target="balance-get"><span class="side-ico">💰</span>Получить баланс</a>
-      <a class="side-link" data-target="balance-edit"><span class="side-ico">✏️</span>Изменить баланс</a>
+      <a class="side-link" data-target="balance-get"><span class="side-ico"><span class="cico cico-coin"></span></span>Получить баланс</a>
+      <a class="side-link" data-target="balance-edit"><span class="side-ico"><span class="cico cico-pencil"></span></span>Изменить баланс</a>
     </div>
     <div class="side-group">
       <div class="side-label">AI Chat (Aurin)</div>
-      <a class="side-link" data-target="ai-chat"><span class="side-ico">💬</span>Отправка запроса</a>
-      <a class="side-link" data-target="ai-stream"><span class="side-ico">🌊</span>Потоковый ответ</a>
-      <a class="side-link" data-target="ai-usage"><span class="side-ico">📊</span>Лимиты токенов</a>
+      <a class="side-link" data-target="ai-chat"><span class="side-ico"><span class="cico cico-chat"></span></span>Отправка запроса</a>
+      <a class="side-link" data-target="ai-stream"><span class="side-ico"><span class="cico cico-wave"></span></span>Потоковый ответ</a>
+      <a class="side-link" data-target="ai-usage"><span class="side-ico"><span class="cico cico-chart"></span></span>Лимиты токенов</a>
     </div>
     <div class="side-group">
       <div class="side-label">Дополнительно</div>
-      <a class="side-link" data-target="search"><span class="side-ico">🔍</span>Веб-поиск</a>
-      <a class="side-link" data-target="telegram"><span class="side-ico">✈️</span>Сообщения в Telegram</a>
+      <a class="side-link" data-target="search"><span class="side-ico"><span class="cico cico-search"></span></span>Веб-поиск</a>
+      <a class="side-link" data-target="telegram"><span class="side-ico"><span class="cico cico-plane"></span></span>Сообщения в Telegram</a>
     </div>
     <div class="side-group">
       <div class="side-label">Справка</div>
-      <a class="side-link" data-target="errors"><span class="side-ico">⚠️</span>Коды ошибок</a>
-      <a class="side-link" data-target="limits"><span class="side-ico">🛡️</span>Лимиты и защита</a>
-      <a class="side-link" data-target="faq"><span class="side-ico">❓</span>FAQ</a>
+      <a class="side-link" data-target="errors"><span class="side-ico"><span class="cico cico-warn"></span></span>Коды ошибок</a>
+      <a class="side-link" data-target="limits"><span class="side-ico"><span class="cico cico-shield"></span></span>Лимиты и защита</a>
+      <a class="side-link" data-target="faq"><span class="side-ico"><span class="cico cico-question"></span></span>FAQ</a>
     </div>
   </aside>
 
@@ -240,8 +342,8 @@ code{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;col
       <h1>API <span class="grad">FernieID</span><br>для разработчиков</h1>
       <p>Единая система авторизации, баланса и AI для всех проектов FernieX. Один API-ключ — доступ к аутентификации через Telegram-бота, балансам пользователей и AI-модели Aurin. Ниже — всё, что нужно, чтобы подключить своё приложение за 10 минут.</p>
       <div class="hero-actions">
-        <a href="#keys" class="hero-btn primary">🔑 Создать API-ключ</a>
-        <a href="#quickstart" class="hero-btn ghost">⚡ Быстрый старт</a>
+        <a href="#keys" class="hero-btn primary"><span class="cico cico-key"></span> Создать API-ключ</a>
+        <a href="#quickstart" class="hero-btn ghost"><span class="cico cico-bolt"></span> Быстрый старт</a>
       </div>
     </div>
 
@@ -260,7 +362,7 @@ code{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;col
       </ul>
 
       <div class="callout info">
-        <div class="callout-ico">💡</div>
+        <div class="callout-ico"><span class="cico cico-bulb"></span></div>
         <div class="callout-text"><b>Базовый URL API:</b> <code class="inline" style="background:transparent;border:none;padding:0;color:#a8c8ff;">https://ferniex-id.vercel.app</code> — все примеры ниже используют этот адрес.</div>
       </div>
     </section>
@@ -310,15 +412,15 @@ code{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;col
       <h3>Типы приложений</h3>
       <p>При создании ключа нужно выбрать тип — это влияет только на отображение в списке и внутреннюю аналитику, на права доступа не влияет.</p>
       <div class="type-grid">
-        <div class="type-card"><div class="type-ico">🌐</div><div class="type-lbl">Веб</div></div>
-        <div class="type-card"><div class="type-ico">📱</div><div class="type-lbl">Мобайл</div></div>
-        <div class="type-card"><div class="type-ico">🤖</div><div class="type-lbl">Бот</div></div>
-        <div class="type-card"><div class="type-ico">🎮</div><div class="type-lbl">Игра</div></div>
-        <div class="type-card"><div class="type-ico">⚙️</div><div class="type-lbl">Другое</div></div>
+        <div class="type-card"><div class="type-ico"><span class="cico cico-globe"></span></div><div class="type-lbl">Веб</div></div>
+        <div class="type-card"><div class="type-ico"><span class="cico cico-mobile"></span></div><div class="type-lbl">Мобайл</div></div>
+        <div class="type-card"><div class="type-ico"><span class="cico cico-robot"></span></div><div class="type-lbl">Бот</div></div>
+        <div class="type-card"><div class="type-ico"><span class="cico cico-gamepad"></span></div><div class="type-lbl">Игра</div></div>
+        <div class="type-card"><div class="type-ico"><span class="cico cico-gear"></span></div><div class="type-lbl">Другое</div></div>
       </div>
 
       <div class="callout warn">
-        <div class="callout-ico">🤖</div>
+        <div class="callout-ico"><span class="cico cico-robot"></span></div>
         <div class="callout-text">Пополнение баланса (<code class="inline" style="background:transparent;border:none;padding:0;">action: "add"</code> в <code class="inline" style="background:transparent;border:none;padding:0;">/api/edit/balance</code>) доступно <b>только ключам с типом «Бот»</b>. Остальные типы могут только списывать (<code class="inline" style="background:transparent;border:none;padding:0;">spend</code>).</div>
       </div>
 
@@ -330,7 +432,7 @@ code{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;col
       </ul>
 
       <div class="callout danger">
-        <div class="callout-ico">⚠️</div>
+        <div class="callout-ico"><span class="cico cico-warn"></span></div>
         <div class="callout-text">Ключ равнозначен паролю приложения. Не публикуй его в клиентском JS-коде для чувствительных операций (изменение баланса) — используй его только с бэкенда, если это не встроенный SDK-поток входа.</div>
       </div>
     </section>
@@ -428,9 +530,16 @@ console.<span class="tok-fn">log</span>(<span class="tok-str">'Вошёл как
 <span class="tok-kw">&lt;input</span> <span class="tok-key">id</span>=<span class="tok-str">"loginPassword"</span> <span class="tok-key">type</span>=<span class="tok-str">"password"</span> <span class="tok-key">placeholder</span>=<span class="tok-str">"Пароль"</span><span class="tok-kw">&gt;</span>
 <span class="tok-kw">&lt;button</span> <span class="tok-key">id</span>=<span class="tok-str">"loginBtn"</span><span class="tok-kw">&gt;</span>Войти<span class="tok-kw">&lt;/button&gt;</span></code></pre>
           </div>
-          <div class="code-wrap">
-            <div class="code-head"><span class="code-lang">javascript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
-            <pre><code><span class="tok-kw">const</span> API_KEY = <span class="tok-str">'fid_твой_ключ'</span>; <span class="tok-com">// хранится на бэкенде, не в клиентском коде</span>
+          <div class="code-tabs" data-tabs>
+            <div class="code-tabs-nav">
+              <button class="code-tab-btn active" data-lang="javascript" onclick="switchTab(this)">JavaScript</button>
+              <button class="code-tab-btn" data-lang="typescript" onclick="switchTab(this)">TypeScript</button>
+              <button class="code-tab-btn" data-lang="python" onclick="switchTab(this)">Python</button>
+            </div>
+            <div class="code-tab-panel active" data-lang="javascript">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">javascript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code><span class="tok-kw">const</span> API_KEY = <span class="tok-str">'fid_твой_ключ'</span>; <span class="tok-com">// хранится на бэкенде, не в клиентском коде</span>
 
 document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'loginBtn'</span>).onclick = <span class="tok-kw">async</span> () =&gt; {
   <span class="tok-com">// значения берём из того, что реально ввёл пользователь на странице</span>
@@ -452,9 +561,64 @@ document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'login
     <span class="tok-fn">showCodeInput</span>(data.userId);
   }
 };</code></pre>
+              </div>
+            </div>
+            <div class="code-tab-panel" data-lang="typescript">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">typescript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code><span class="tok-kw">const</span> API_KEY<span class="tok-ts">: string</span> = <span class="tok-str">'fid_твой_ключ'</span>; <span class="tok-com">// хранится на бэкенде, не в клиентском коде</span>
+
+<span class="tok-kw">interface</span> <span class="tok-fn">LoginResponse</span> {
+  success<span class="tok-ts">: boolean</span>;
+  require2fa<span class="tok-ts">?: boolean</span>;
+  userId<span class="tok-ts">?: number</span>;
+  telegramLinked<span class="tok-ts">?: boolean</span>;
+}
+
+document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'loginBtn'</span>)!.<span class="tok-fn">addEventListener</span>(<span class="tok-str">'click'</span>, <span class="tok-kw">async</span> () =&gt; {
+  <span class="tok-kw">const</span> username = (document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'loginUsername'</span>) <span class="tok-kw">as</span> HTMLInputElement).value.<span class="tok-fn">trim</span>();
+  <span class="tok-kw">const</span> password = (document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'loginPassword'</span>) <span class="tok-kw">as</span> HTMLInputElement).value;
+
+  <span class="tok-kw">if</span> (!username || !password) <span class="tok-kw">return</span> <span class="tok-fn">alert</span>(<span class="tok-str">'Заполни логин и пароль'</span>);
+
+  <span class="tok-kw">const</span> res = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/auth/login'</span>, {
+    method: <span class="tok-str">'POST'</span>,
+    headers: { <span class="tok-str">'Content-Type'</span>: <span class="tok-str">'application/json'</span> },
+    body: <span class="tok-fn">JSON.stringify</span>({ apiKey: API_KEY, username, password })
+  });
+  <span class="tok-kw">const</span> data<span class="tok-ts">: LoginResponse</span> = <span class="tok-kw">await</span> res.<span class="tok-fn">json</span>();
+
+  <span class="tok-kw">if</span> (data.require2fa) {
+    <span class="tok-fn">showCodeInput</span>(data.userId!);
+  }
+});</code></pre>
+              </div>
+            </div>
+            <div class="code-tab-panel" data-lang="python">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">python</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code><span class="tok-kw">import</span> requests
+
+API_KEY = <span class="tok-str">"fid_твой_ключ"</span>
+
+<span class="tok-kw">def</span> <span class="tok-fn">login</span>(username: str, password: str) -&gt; dict:
+    res = requests.<span class="tok-fn">post</span>(
+        <span class="tok-str">"https://ferniex-id.vercel.app/api/auth/login"</span>,
+        json={<span class="tok-str">"apiKey"</span>: API_KEY, <span class="tok-str">"username"</span>: username, <span class="tok-str">"password"</span>: password},
+    )
+    data = res.<span class="tok-fn">json</span>()
+    <span class="tok-com"># { "success": True, "require2fa": True, "userId": 42, "telegramLinked": True }</span>
+
+    <span class="tok-kw">if</span> data.get(<span class="tok-str">"require2fa"</span>):
+        <span class="tok-com"># дальше передай data["userId"] в verify_2fa()</span>
+        <span class="tok-kw">pass</span>
+
+    <span class="tok-kw">return</span> data</code></pre>
+              </div>
+            </div>
           </div>
           <div class="callout info">
-            <div class="callout-ico">💡</div>
+            <div class="callout-ico"><span class="cico cico-bulb"></span></div>
             <div class="callout-text">Строки <code class="inline" style="background:transparent;border:none;padding:0;">'fernie'</code> и <code class="inline" style="background:transparent;border:none;padding:0;">'••••••••'</code> из старого примера — это то, что попадёт в переменные из полей формы. Захардкоженных значений в реальном коде быть не должно, логин и пароль всегда приходят от пользователя.</div>
           </div>
         </div></div>
@@ -487,9 +651,16 @@ document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'login
             <pre><code><span class="tok-kw">&lt;input</span> <span class="tok-key">id</span>=<span class="tok-str">"twoFaCode"</span> <span class="tok-key">maxlength</span>=<span class="tok-str">"6"</span> <span class="tok-key">placeholder</span>=<span class="tok-str">"000000"</span><span class="tok-kw">&gt;</span>
 <span class="tok-kw">&lt;button</span> <span class="tok-key">id</span>=<span class="tok-str">"confirmCodeBtn"</span><span class="tok-kw">&gt;</span>Подтвердить<span class="tok-kw">&lt;/button&gt;</span></code></pre>
           </div>
-          <div class="code-wrap">
-            <div class="code-head"><span class="code-lang">javascript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
-            <pre><code><span class="tok-kw">function</span> <span class="tok-fn">showCodeInput</span>(userId) {
+          <div class="code-tabs" data-tabs>
+            <div class="code-tabs-nav">
+              <button class="code-tab-btn active" data-lang="javascript" onclick="switchTab(this)">JavaScript</button>
+              <button class="code-tab-btn" data-lang="typescript" onclick="switchTab(this)">TypeScript</button>
+              <button class="code-tab-btn" data-lang="python" onclick="switchTab(this)">Python</button>
+            </div>
+            <div class="code-tab-panel active" data-lang="javascript">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">javascript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code><span class="tok-kw">function</span> <span class="tok-fn">showCodeInput</span>(userId) {
   document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'confirmCodeBtn'</span>).onclick = <span class="tok-kw">async</span> () =&gt; {
     <span class="tok-com">// код берём из того, что пользователь реально ввёл в поле</span>
     <span class="tok-kw">const</span> code = document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'twoFaCode'</span>).value.<span class="tok-fn">trim</span>();
@@ -508,9 +679,53 @@ document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'login
     }
   };
 }</code></pre>
+              </div>
+            </div>
+            <div class="code-tab-panel" data-lang="typescript">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">typescript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code><span class="tok-kw">interface</span> <span class="tok-fn">VerifyResponse</span> {
+  success<span class="tok-ts">: boolean</span>;
+  userId<span class="tok-ts">?: number</span>;
+  username<span class="tok-ts">?: string</span>;
+  role<span class="tok-ts">?: string</span>;
+}
+
+<span class="tok-kw">function</span> <span class="tok-fn">showCodeInput</span>(userId<span class="tok-ts">: number</span>)<span class="tok-ts">: void</span> {
+  document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'confirmCodeBtn'</span>)!.<span class="tok-fn">addEventListener</span>(<span class="tok-str">'click'</span>, <span class="tok-kw">async</span> () =&gt; {
+    <span class="tok-kw">const</span> code = (document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'twoFaCode'</span>) <span class="tok-kw">as</span> HTMLInputElement).value.<span class="tok-fn">trim</span>();
+    <span class="tok-kw">if</span> (code.length !== <span class="tok-num">6</span>) <span class="tok-kw">return</span> <span class="tok-fn">alert</span>(<span class="tok-str">'Введи 6-значный код из Telegram'</span>);
+
+    <span class="tok-kw">const</span> res = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/auth/verify-2fa'</span>, {
+      method: <span class="tok-str">'POST'</span>,
+      headers: { <span class="tok-str">'Content-Type'</span>: <span class="tok-str">'application/json'</span> },
+      body: <span class="tok-fn">JSON.stringify</span>({ apiKey: API_KEY, userId, code })
+    });
+    <span class="tok-kw">const</span> data<span class="tok-ts">: VerifyResponse</span> = <span class="tok-kw">await</span> res.<span class="tok-fn">json</span>();
+
+    <span class="tok-kw">if</span> (data.success) {
+      <span class="tok-com">// сохраняем сессию, открываем личный кабинет и т.д.</span>
+    }
+  });
+}</code></pre>
+              </div>
+            </div>
+            <div class="code-tab-panel" data-lang="python">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">python</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code><span class="tok-kw">def</span> <span class="tok-fn">verify_2fa</span>(user_id: int, code: str) -&gt; dict:
+    res = requests.<span class="tok-fn">post</span>(
+        <span class="tok-str">"https://ferniex-id.vercel.app/api/auth/verify-2fa"</span>,
+        json={<span class="tok-str">"apiKey"</span>: API_KEY, <span class="tok-str">"userId"</span>: user_id, <span class="tok-str">"code"</span>: code},
+    )
+    data = res.<span class="tok-fn">json</span>()
+    <span class="tok-com"># { "success": True, "userId": 42, "username": "fernie", "role": "user" }</span>
+    <span class="tok-kw">return</span> data</code></pre>
+              </div>
+            </div>
           </div>
           <div class="callout ok">
-            <div class="callout-ico">✅</div>
+            <div class="callout-ico"><span class="cico cico-check"></span></div>
             <div class="callout-text">Код одноразовый — после использования удаляется из базы сразу, повторно применить нельзя. Значение <code class="inline" style="background:transparent;border:none;padding:0;">'482913'</code> из старого примера было просто иллюстрацией формата — в реальном коде так вставлять код нельзя, он всегда приходит из поля ввода.</div>
           </div>
         </div></div>
@@ -535,14 +750,53 @@ document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'login
             <tr><th>Поле</th><th>Тип</th><th>Описание</th></tr>
             <tr><td class="pname">key<span class="param-req">обязателен</span></td><td>string</td><td>API-ключ для проверки</td></tr>
           </table>
-          <div class="code-wrap">
-            <div class="code-head"><span class="code-lang">javascript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
-            <pre><code><span class="tok-kw">const</span> data = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/apikeys/verify'</span>, {
+          <div class="code-tabs" data-tabs>
+            <div class="code-tabs-nav">
+              <button class="code-tab-btn active" data-lang="javascript" onclick="switchTab(this)">JavaScript</button>
+              <button class="code-tab-btn" data-lang="typescript" onclick="switchTab(this)">TypeScript</button>
+              <button class="code-tab-btn" data-lang="python" onclick="switchTab(this)">Python</button>
+            </div>
+            <div class="code-tab-panel active" data-lang="javascript">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">javascript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code><span class="tok-kw">const</span> data = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/apikeys/verify'</span>, {
   method: <span class="tok-str">'POST'</span>,
   headers: { <span class="tok-str">'Content-Type'</span>: <span class="tok-str">'application/json'</span> },
   body: <span class="tok-fn">JSON.stringify</span>({ key: <span class="tok-str">'fid_твой_ключ'</span> })
 }).<span class="tok-fn">then</span>(r =&gt; r.<span class="tok-fn">json</span>());
 <span class="tok-com">// { success: true, userId, name, appName, type }</span></code></pre>
+              </div>
+            </div>
+            <div class="code-tab-panel" data-lang="typescript">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">typescript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code><span class="tok-kw">interface</span> <span class="tok-fn">VerifyKeyResponse</span> {
+  success<span class="tok-ts">: boolean</span>;
+  userId<span class="tok-ts">?: number</span>;
+  name<span class="tok-ts">?: string</span>;
+  appName<span class="tok-ts">?: string</span>;
+  type<span class="tok-ts">?: string</span>;
+}
+
+<span class="tok-kw">const</span> data<span class="tok-ts">: VerifyKeyResponse</span> = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/apikeys/verify'</span>, {
+  method: <span class="tok-str">'POST'</span>,
+  headers: { <span class="tok-str">'Content-Type'</span>: <span class="tok-str">'application/json'</span> },
+  body: <span class="tok-fn">JSON.stringify</span>({ key: <span class="tok-str">'fid_твой_ключ'</span> })
+}).<span class="tok-fn">then</span>(r =&gt; r.<span class="tok-fn">json</span>());</code></pre>
+              </div>
+            </div>
+            <div class="code-tab-panel" data-lang="python">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">python</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code><span class="tok-kw">import</span> requests
+
+data = requests.<span class="tok-fn">post</span>(
+    <span class="tok-str">"https://ferniex-id.vercel.app/api/apikeys/verify"</span>,
+    json={<span class="tok-str">"key"</span>: <span class="tok-str">"fid_твой_ключ"</span>},
+).<span class="tok-fn">json</span>()
+<span class="tok-com"># { "success": True, "userId": ..., "name": ..., "appName": ..., "type": ... }</span></code></pre>
+              </div>
+            </div>
           </div>
         </div></div>
       </div>
@@ -568,9 +822,16 @@ document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'login
             <tr><td class="pname">username<span class="param-req">обязателен</span></td><td>string</td><td>Логин пользователя FernieID</td></tr>
             <tr><td class="pname">fields<span class="param-opt">опционально</span></td><td>string[]</td><td>Например <code class="inline">['dc','seeds']</code>. По умолчанию — все известные поля.</td></tr>
           </table>
-          <div class="code-wrap">
-            <div class="code-head"><span class="code-lang">javascript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
-            <pre><code><span class="tok-kw">const</span> data = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/balance/get'</span>, {
+          <div class="code-tabs" data-tabs>
+            <div class="code-tabs-nav">
+              <button class="code-tab-btn active" data-lang="javascript" onclick="switchTab(this)">JavaScript</button>
+              <button class="code-tab-btn" data-lang="typescript" onclick="switchTab(this)">TypeScript</button>
+              <button class="code-tab-btn" data-lang="python" onclick="switchTab(this)">Python</button>
+            </div>
+            <div class="code-tab-panel active" data-lang="javascript">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">javascript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code><span class="tok-kw">const</span> data = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/balance/get'</span>, {
   method: <span class="tok-str">'POST'</span>,
   headers: { <span class="tok-str">'Content-Type'</span>: <span class="tok-str">'application/json'</span> },
   body: <span class="tok-fn">JSON.stringify</span>({
@@ -580,6 +841,43 @@ document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'login
   })
 }).<span class="tok-fn">then</span>(r =&gt; r.<span class="tok-fn">json</span>());
 <span class="tok-com">// { success: true, username: 'fernie', dc: 4200, seeds: 15300 }</span></code></pre>
+              </div>
+            </div>
+            <div class="code-tab-panel" data-lang="typescript">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">typescript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code><span class="tok-kw">interface</span> <span class="tok-fn">BalanceResponse</span> {
+  success<span class="tok-ts">: boolean</span>;
+  username<span class="tok-ts">?: string</span>;
+  dc<span class="tok-ts">?: number</span>;
+  seeds<span class="tok-ts">?: number</span>;
+}
+
+<span class="tok-kw">const</span> data<span class="tok-ts">: BalanceResponse</span> = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/balance/get'</span>, {
+  method: <span class="tok-str">'POST'</span>,
+  headers: { <span class="tok-str">'Content-Type'</span>: <span class="tok-str">'application/json'</span> },
+  body: <span class="tok-fn">JSON.stringify</span>({
+    apiKey: <span class="tok-str">'fid_твой_ключ'</span>,
+    username: <span class="tok-str">'fernie'</span>,
+    fields: [<span class="tok-str">'dc'</span>, <span class="tok-str">'seeds'</span>]
+  })
+}).<span class="tok-fn">then</span>(r =&gt; r.<span class="tok-fn">json</span>());</code></pre>
+              </div>
+            </div>
+            <div class="code-tab-panel" data-lang="python">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">python</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code>data = requests.<span class="tok-fn">post</span>(
+    <span class="tok-str">"https://ferniex-id.vercel.app/api/balance/get"</span>,
+    json={
+        <span class="tok-str">"apiKey"</span>: <span class="tok-str">"fid_твой_ключ"</span>,
+        <span class="tok-str">"username"</span>: <span class="tok-str">"fernie"</span>,
+        <span class="tok-str">"fields"</span>: [<span class="tok-str">"dc"</span>, <span class="tok-str">"seeds"</span>],
+    },
+).<span class="tok-fn">json</span>()
+<span class="tok-com"># { "success": True, "username": "fernie", "dc": 4200, "seeds": 15300 }</span></code></pre>
+              </div>
+            </div>
           </div>
         </div></div>
       </div>
@@ -606,9 +904,16 @@ document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'login
             <tr><td class="pname">amount<span class="param-req">обязателен</span></td><td>number</td><td>Сумма операции</td></tr>
             <tr><td class="pname">action<span class="param-req">обязателен</span></td><td>string</td><td><code class="inline">"add"</code> (только тип «Бот») или <code class="inline">"spend"</code></td></tr>
           </table>
-          <div class="code-wrap">
-            <div class="code-head"><span class="code-lang">javascript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
-            <pre><code><span class="tok-kw">const</span> data = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/edit/balance'</span>, {
+          <div class="code-tabs" data-tabs>
+            <div class="code-tabs-nav">
+              <button class="code-tab-btn active" data-lang="javascript" onclick="switchTab(this)">JavaScript</button>
+              <button class="code-tab-btn" data-lang="typescript" onclick="switchTab(this)">TypeScript</button>
+              <button class="code-tab-btn" data-lang="python" onclick="switchTab(this)">Python</button>
+            </div>
+            <div class="code-tab-panel active" data-lang="javascript">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">javascript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code><span class="tok-kw">const</span> data = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/edit/balance'</span>, {
   method: <span class="tok-str">'POST'</span>,
   headers: { <span class="tok-str">'Content-Type'</span>: <span class="tok-str">'application/json'</span> },
   body: <span class="tok-fn">JSON.stringify</span>({
@@ -619,9 +924,48 @@ document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'login
     action: <span class="tok-str">'add'</span>
   })
 }).<span class="tok-fn">then</span>(r =&gt; r.<span class="tok-fn">json</span>());</code></pre>
+              </div>
+            </div>
+            <div class="code-tab-panel" data-lang="typescript">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">typescript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code><span class="tok-kw">interface</span> <span class="tok-fn">EditBalanceResponse</span> {
+  success<span class="tok-ts">: boolean</span>;
+  dc<span class="tok-ts">?: number</span>;
+  seeds<span class="tok-ts">?: number</span>;
+}
+
+<span class="tok-kw">const</span> data<span class="tok-ts">: EditBalanceResponse</span> = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/edit/balance'</span>, {
+  method: <span class="tok-str">'POST'</span>,
+  headers: { <span class="tok-str">'Content-Type'</span>: <span class="tok-str">'application/json'</span> },
+  body: <span class="tok-fn">JSON.stringify</span>({
+    apiKey: <span class="tok-str">'fid_твой_бот_ключ'</span>,
+    username: <span class="tok-str">'fernie'</span>,
+    currency: <span class="tok-str">'dc'</span>,
+    amount: <span class="tok-num">500</span>,
+    action: <span class="tok-str">'add'</span>
+  })
+}).<span class="tok-fn">then</span>(r =&gt; r.<span class="tok-fn">json</span>());</code></pre>
+              </div>
+            </div>
+            <div class="code-tab-panel" data-lang="python">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">python</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code>data = requests.<span class="tok-fn">post</span>(
+    <span class="tok-str">"https://ferniex-id.vercel.app/api/edit/balance"</span>,
+    json={
+        <span class="tok-str">"apiKey"</span>: <span class="tok-str">"fid_твой_бот_ключ"</span>,
+        <span class="tok-str">"username"</span>: <span class="tok-str">"fernie"</span>,
+        <span class="tok-str">"currency"</span>: <span class="tok-str">"dc"</span>,
+        <span class="tok-str">"amount"</span>: <span class="tok-num">500</span>,
+        <span class="tok-str">"action"</span>: <span class="tok-str">"add"</span>,
+    },
+).<span class="tok-fn">json</span>()</code></pre>
+              </div>
+            </div>
           </div>
           <div class="callout warn">
-            <div class="callout-ico">🤖</div>
+            <div class="callout-ico"><span class="cico cico-robot"></span></div>
             <div class="callout-text">Начисление (<code class="inline" style="background:transparent;border:none;padding:0;">add</code>) работает только если ключ создан с типом <b>«Бот»</b>. Для веб- и других типов ключей сервер вернёт ошибку.</div>
           </div>
         </div></div>
@@ -650,9 +994,16 @@ document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'login
             <tr><td class="pname">max_tokens<span class="param-opt">опционально</span></td><td>number</td><td>По умолчанию 8192</td></tr>
             <tr><td class="pname">stream<span class="param-opt">опционально</span></td><td>boolean</td><td><code class="inline">false</code> для этого эндпоинта</td></tr>
           </table>
-          <div class="code-wrap">
-            <div class="code-head"><span class="code-lang">javascript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
-            <pre><code><span class="tok-kw">const</span> data = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/chat'</span>, {
+          <div class="code-tabs" data-tabs>
+            <div class="code-tabs-nav">
+              <button class="code-tab-btn active" data-lang="javascript" onclick="switchTab(this)">JavaScript</button>
+              <button class="code-tab-btn" data-lang="typescript" onclick="switchTab(this)">TypeScript</button>
+              <button class="code-tab-btn" data-lang="python" onclick="switchTab(this)">Python</button>
+            </div>
+            <div class="code-tab-panel active" data-lang="javascript">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">javascript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code><span class="tok-kw">const</span> data = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/chat'</span>, {
   method: <span class="tok-str">'POST'</span>,
   headers: { <span class="tok-str">'Content-Type'</span>: <span class="tok-str">'application/json'</span> },
   body: <span class="tok-fn">JSON.stringify</span>({
@@ -662,9 +1013,44 @@ document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'login
   })
 }).<span class="tok-fn">then</span>(r =&gt; r.<span class="tok-fn">json</span>());
 <span class="tok-com">// { choices: [{ message: { role, content } }], usage: { total_tokens } }</span></code></pre>
+              </div>
+            </div>
+            <div class="code-tab-panel" data-lang="typescript">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">typescript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code><span class="tok-kw">interface</span> <span class="tok-fn">ChatResponse</span> {
+  choices: { message: { role<span class="tok-ts">: string</span>; content<span class="tok-ts">: string</span> } }[];
+  usage: { total_tokens<span class="tok-ts">: number</span> };
+}
+
+<span class="tok-kw">const</span> data<span class="tok-ts">: ChatResponse</span> = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/chat'</span>, {
+  method: <span class="tok-str">'POST'</span>,
+  headers: { <span class="tok-str">'Content-Type'</span>: <span class="tok-str">'application/json'</span> },
+  body: <span class="tok-fn">JSON.stringify</span>({
+    apiKey: <span class="tok-str">'fid_твой_ключ'</span>,
+    model: <span class="tok-str">'aurin-lite'</span>,
+    messages: [{ role: <span class="tok-str">'user'</span>, content: <span class="tok-str">'Привет! Что нового в мире технологий?'</span> }]
+  })
+}).<span class="tok-fn">then</span>(r =&gt; r.<span class="tok-fn">json</span>());</code></pre>
+              </div>
+            </div>
+            <div class="code-tab-panel" data-lang="python">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">python</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code>data = requests.<span class="tok-fn">post</span>(
+    <span class="tok-str">"https://ferniex-id.vercel.app/api/chat"</span>,
+    json={
+        <span class="tok-str">"apiKey"</span>: <span class="tok-str">"fid_твой_ключ"</span>,
+        <span class="tok-str">"model"</span>: <span class="tok-str">"aurin-lite"</span>,
+        <span class="tok-str">"messages"</span>: [{<span class="tok-str">"role"</span>: <span class="tok-str">"user"</span>, <span class="tok-str">"content"</span>: <span class="tok-str">"Привет! Что нового в мире технологий?"</span>}],
+    },
+).<span class="tok-fn">json</span>()
+<span class="tok-com"># { "choices": [{ "message": { "role", "content" } }], "usage": { "total_tokens" } }</span></code></pre>
+              </div>
+            </div>
           </div>
           <div class="callout ok">
-            <div class="callout-ico">🌐</div>
+            <div class="callout-ico"><span class="cico cico-globe"></span></div>
             <div class="callout-text">Модель сама решает, когда нужен поиск в интернете или чтение конкретной страницы — вызывать эти инструменты отдельно не нужно, всё происходит на сервере прозрачно для клиента.</div>
           </div>
         </div></div>
@@ -676,9 +1062,16 @@ document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'login
       <h2><span class="sec-num">11</span> AI Chat — потоковый ответ</h2>
       <p class="lead">Тот же эндпоинт <code class="inline">/api/chat</code>, но с <code class="inline">stream: true</code> — ответ приходит частями по SSE (Server-Sent Events), удобно для «печатающегося» текста в UI.</p>
 
-      <div class="code-wrap">
-        <div class="code-head"><span class="code-lang">javascript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
-        <pre><code><span class="tok-kw">const</span> res = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/chat'</span>, {
+      <div class="code-tabs" data-tabs>
+        <div class="code-tabs-nav">
+          <button class="code-tab-btn active" data-lang="javascript" onclick="switchTab(this)">JavaScript</button>
+          <button class="code-tab-btn" data-lang="typescript" onclick="switchTab(this)">TypeScript</button>
+          <button class="code-tab-btn" data-lang="python" onclick="switchTab(this)">Python</button>
+        </div>
+        <div class="code-tab-panel active" data-lang="javascript">
+          <div class="code-wrap">
+            <div class="code-head"><span class="code-lang">javascript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+            <pre><code><span class="tok-kw">const</span> res = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/chat'</span>, {
   method: <span class="tok-str">'POST'</span>,
   headers: { <span class="tok-str">'Content-Type'</span>: <span class="tok-str">'application/json'</span> },
   body: <span class="tok-fn">JSON.stringify</span>({
@@ -707,6 +1100,69 @@ document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'login
     <span class="tok-kw">if</span> (delta) process.stdout.<span class="tok-fn">write</span>(delta); <span class="tok-com">// или dom.textContent += delta</span>
   }
 }</code></pre>
+          </div>
+        </div>
+        <div class="code-tab-panel" data-lang="typescript">
+          <div class="code-wrap">
+            <div class="code-head"><span class="code-lang">typescript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+            <pre><code><span class="tok-kw">const</span> res = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/chat'</span>, {
+  method: <span class="tok-str">'POST'</span>,
+  headers: { <span class="tok-str">'Content-Type'</span>: <span class="tok-str">'application/json'</span> },
+  body: <span class="tok-fn">JSON.stringify</span>({
+    apiKey: <span class="tok-str">'fid_твой_ключ'</span>,
+    model: <span class="tok-str">'aurin'</span>,
+    stream: <span class="tok-kw">true</span>,
+    messages: [{ role: <span class="tok-str">'user'</span>, content: <span class="tok-str">'Расскажи историю в 3 предложениях'</span> }]
+  })
+});
+
+<span class="tok-kw">const</span> reader = res.body!.<span class="tok-fn">getReader</span>();
+<span class="tok-kw">const</span> decoder = <span class="tok-kw">new</span> <span class="tok-fn">TextDecoder</span>();
+<span class="tok-kw">let</span> buffer<span class="tok-ts">: string</span> = <span class="tok-str">''</span>;
+
+<span class="tok-kw">while</span> (<span class="tok-kw">true</span>) {
+  <span class="tok-kw">const</span> { done, value } = <span class="tok-kw">await</span> reader.<span class="tok-fn">read</span>();
+  <span class="tok-kw">if</span> (done) <span class="tok-kw">break</span>;
+  buffer += decoder.<span class="tok-fn">decode</span>(value, { stream: <span class="tok-kw">true</span> });
+  <span class="tok-kw">const</span> lines = buffer.<span class="tok-fn">split</span>(<span class="tok-str">'\n'</span>);
+  buffer = lines.<span class="tok-fn">pop</span>()!;
+  <span class="tok-kw">for</span> (<span class="tok-kw">const</span> line <span class="tok-kw">of</span> lines) {
+    <span class="tok-kw">if</span> (!line.<span class="tok-fn">startsWith</span>(<span class="tok-str">'data: '</span>)) <span class="tok-kw">continue</span>;
+    <span class="tok-kw">const</span> raw = line.<span class="tok-fn">slice</span>(<span class="tok-num">6</span>).<span class="tok-fn">trim</span>();
+    <span class="tok-kw">if</span> (raw === <span class="tok-str">'[DONE]'</span>) <span class="tok-kw">continue</span>;
+    <span class="tok-kw">const</span> delta = <span class="tok-fn">JSON.parse</span>(raw).choices?.[<span class="tok-num">0</span>]?.delta?.content;
+    <span class="tok-kw">if</span> (delta) console.<span class="tok-fn">log</span>(delta);
+  }
+}</code></pre>
+          </div>
+        </div>
+        <div class="code-tab-panel" data-lang="python">
+          <div class="code-wrap">
+            <div class="code-head"><span class="code-lang">python</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+            <pre><code><span class="tok-kw">import</span> json
+<span class="tok-kw">import</span> requests
+
+<span class="tok-kw">with</span> requests.<span class="tok-fn">post</span>(
+    <span class="tok-str">"https://ferniex-id.vercel.app/api/chat"</span>,
+    json={
+        <span class="tok-str">"apiKey"</span>: <span class="tok-str">"fid_твой_ключ"</span>,
+        <span class="tok-str">"model"</span>: <span class="tok-str">"aurin"</span>,
+        <span class="tok-str">"stream"</span>: <span class="tok-kw">True</span>,
+        <span class="tok-str">"messages"</span>: [{<span class="tok-str">"role"</span>: <span class="tok-str">"user"</span>, <span class="tok-str">"content"</span>: <span class="tok-str">"Расскажи историю в 3 предложениях"</span>}],
+    },
+    stream=<span class="tok-kw">True</span>,
+) <span class="tok-kw">as</span> res:
+    <span class="tok-kw">for</span> line <span class="tok-kw">in</span> res.iter_lines(decode_unicode=<span class="tok-kw">True</span>):
+        <span class="tok-kw">if</span> <span class="tok-kw">not</span> line <span class="tok-kw">or</span> <span class="tok-kw">not</span> line.<span class="tok-fn">startswith</span>(<span class="tok-str">"data: "</span>):
+            <span class="tok-kw">continue</span>
+        raw = line[<span class="tok-num">6</span>:].strip()
+        <span class="tok-kw">if</span> raw == <span class="tok-str">"[DONE]"</span>:
+            <span class="tok-kw">continue</span>
+        delta = json.loads(raw)[<span class="tok-str">"choices"</span>][<span class="tok-num">0</span>][<span class="tok-str">"delta"</span>].get(<span class="tok-str">"content"</span>)
+        <span class="tok-kw">if</span> delta:
+            <span class="tok-fn">print</span>(delta, end=<span class="tok-str">""</span>, flush=<span class="tok-kw">True</span>)</code></pre>
+          </div>
+        </div>
       </div>
 
       <p>С SDK то же самое пишется в несколько строк:</p>
@@ -743,11 +1199,44 @@ document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'login
         </div>
         <div class="ep-body"><div class="ep-inner">
           <p>Возвращает расход токенов за сегодня и остаток лимита.</p>
-          <div class="code-wrap">
-            <div class="code-head"><span class="code-lang">javascript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
-            <pre><code><span class="tok-kw">const</span> data = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">`https://ferniex-id.vercel.app/api/chat/usage/${userId}`</span>)
+          <div class="code-tabs" data-tabs>
+            <div class="code-tabs-nav">
+              <button class="code-tab-btn active" data-lang="javascript" onclick="switchTab(this)">JavaScript</button>
+              <button class="code-tab-btn" data-lang="typescript" onclick="switchTab(this)">TypeScript</button>
+              <button class="code-tab-btn" data-lang="python" onclick="switchTab(this)">Python</button>
+            </div>
+            <div class="code-tab-panel active" data-lang="javascript">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">javascript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code><span class="tok-kw">const</span> data = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">`https://ferniex-id.vercel.app/api/chat/usage/${userId}`</span>)
   .<span class="tok-fn">then</span>(r =&gt; r.<span class="tok-fn">json</span>());
 <span class="tok-com">// { success: true, used: 12400, limit: 200000, has_plus: false, remaining: 187600 }</span></code></pre>
+              </div>
+            </div>
+            <div class="code-tab-panel" data-lang="typescript">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">typescript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code><span class="tok-kw">interface</span> <span class="tok-fn">UsageResponse</span> {
+  success<span class="tok-ts">: boolean</span>;
+  used<span class="tok-ts">: number</span>;
+  limit<span class="tok-ts">: number</span>;
+  has_plus<span class="tok-ts">: boolean</span>;
+  remaining<span class="tok-ts">: number</span>;
+}
+
+<span class="tok-kw">const</span> data<span class="tok-ts">: UsageResponse</span> = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">`https://ferniex-id.vercel.app/api/chat/usage/${userId}`</span>)
+  .<span class="tok-fn">then</span>(r =&gt; r.<span class="tok-fn">json</span>());</code></pre>
+              </div>
+            </div>
+            <div class="code-tab-panel" data-lang="python">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">python</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code>data = requests.<span class="tok-fn">get</span>(
+    <span class="tok-str">f"https://ferniex-id.vercel.app/api/chat/usage/{user_id}"</span>
+).<span class="tok-fn">json</span>()
+<span class="tok-com"># { "success": True, "used": 12400, "limit": 200000, "has_plus": False, "remaining": 187600 }</span></code></pre>
+              </div>
+            </div>
           </div>
         </div></div>
       </div>
@@ -770,11 +1259,40 @@ document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'login
             <tr><th>Поле</th><th>Тип</th><th>Описание</th></tr>
             <tr><td class="pname">q<span class="param-req">обязателен</span></td><td>string</td><td>Поисковый запрос</td></tr>
           </table>
-          <div class="code-wrap">
-            <div class="code-head"><span class="code-lang">javascript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
-            <pre><code><span class="tok-kw">const</span> data = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/search?q=погода+в+москве'</span>)
+          <div class="code-tabs" data-tabs>
+            <div class="code-tabs-nav">
+              <button class="code-tab-btn active" data-lang="javascript" onclick="switchTab(this)">JavaScript</button>
+              <button class="code-tab-btn" data-lang="typescript" onclick="switchTab(this)">TypeScript</button>
+              <button class="code-tab-btn" data-lang="python" onclick="switchTab(this)">Python</button>
+            </div>
+            <div class="code-tab-panel active" data-lang="javascript">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">javascript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code><span class="tok-kw">const</span> data = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/search?q=погода+в+москве'</span>)
   .<span class="tok-fn">then</span>(r =&gt; r.<span class="tok-fn">json</span>());
 <span class="tok-com">// { success: true, results: [{ title, url, snippet }], query }</span></code></pre>
+              </div>
+            </div>
+            <div class="code-tab-panel" data-lang="typescript">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">typescript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code><span class="tok-kw">interface</span> <span class="tok-fn">SearchResult</span> { title<span class="tok-ts">: string</span>; url<span class="tok-ts">: string</span>; snippet<span class="tok-ts">: string</span>; }
+<span class="tok-kw">interface</span> <span class="tok-fn">SearchResponse</span> { success<span class="tok-ts">: boolean</span>; results<span class="tok-ts">: SearchResult[]</span>; query<span class="tok-ts">: string</span>; }
+
+<span class="tok-kw">const</span> data<span class="tok-ts">: SearchResponse</span> = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/search?q=погода+в+москве'</span>)
+  .<span class="tok-fn">then</span>(r =&gt; r.<span class="tok-fn">json</span>());</code></pre>
+              </div>
+            </div>
+            <div class="code-tab-panel" data-lang="python">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">python</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code>data = requests.<span class="tok-fn">get</span>(
+    <span class="tok-str">"https://ferniex-id.vercel.app/api/search"</span>,
+    params={<span class="tok-str">"q"</span>: <span class="tok-str">"погода в москве"</span>},
+).<span class="tok-fn">json</span>()
+<span class="tok-com"># { "success": True, "results": [{ "title", "url", "snippet" }], "query" }</span></code></pre>
+              </div>
+            </div>
           </div>
         </div></div>
       </div>
@@ -798,9 +1316,16 @@ document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'login
             <tr><td class="pname">telegram_id<span class="param-req">обязателен</span></td><td>string|number</td><td>Telegram ID получателя</td></tr>
             <tr><td class="pname">text<span class="param-req">обязателен</span></td><td>string</td><td>Текст сообщения, поддерживает HTML-разметку Telegram (<code class="inline">&lt;b&gt;</code>, <code class="inline">&lt;i&gt;</code>, <code class="inline">&lt;blockquote&gt;</code>)</td></tr>
           </table>
-          <div class="code-wrap">
-            <div class="code-head"><span class="code-lang">javascript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
-            <pre><code><span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/telegram/send-message'</span>, {
+          <div class="code-tabs" data-tabs>
+            <div class="code-tabs-nav">
+              <button class="code-tab-btn active" data-lang="javascript" onclick="switchTab(this)">JavaScript</button>
+              <button class="code-tab-btn" data-lang="typescript" onclick="switchTab(this)">TypeScript</button>
+              <button class="code-tab-btn" data-lang="python" onclick="switchTab(this)">Python</button>
+            </div>
+            <div class="code-tab-panel active" data-lang="javascript">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">javascript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code><span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/telegram/send-message'</span>, {
   method: <span class="tok-str">'POST'</span>,
   headers: { <span class="tok-str">'Content-Type'</span>: <span class="tok-str">'application/json'</span> },
   body: <span class="tok-fn">JSON.stringify</span>({
@@ -808,6 +1333,34 @@ document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'login
     text: <span class="tok-str">'✅ &lt;b&gt;Твоя заявка одобрена!&lt;/b&gt;'</span>
   })
 });</code></pre>
+              </div>
+            </div>
+            <div class="code-tab-panel" data-lang="typescript">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">typescript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code><span class="tok-kw">async function</span> <span class="tok-fn">sendTelegramMessage</span>(telegramId<span class="tok-ts">: string</span>, text<span class="tok-ts">: string</span>)<span class="tok-ts">: Promise&lt;void&gt;</span> {
+  <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/telegram/send-message'</span>, {
+    method: <span class="tok-str">'POST'</span>,
+    headers: { <span class="tok-str">'Content-Type'</span>: <span class="tok-str">'application/json'</span> },
+    body: <span class="tok-fn">JSON.stringify</span>({ telegram_id: telegramId, text })
+  });
+}
+
+<span class="tok-fn">sendTelegramMessage</span>(<span class="tok-str">'7406372338'</span>, <span class="tok-str">'✅ &lt;b&gt;Твоя заявка одобрена!&lt;/b&gt;'</span>);</code></pre>
+              </div>
+            </div>
+            <div class="code-tab-panel" data-lang="python">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">python</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code>requests.<span class="tok-fn">post</span>(
+    <span class="tok-str">"https://ferniex-id.vercel.app/api/telegram/send-message"</span>,
+    json={
+        <span class="tok-str">"telegram_id"</span>: <span class="tok-str">"7406372338"</span>,
+        <span class="tok-str">"text"</span>: <span class="tok-str">"✅ &lt;b&gt;Твоя заявка одобрена!&lt;/b&gt;"</span>,
+    },
+)</code></pre>
+              </div>
+            </div>
           </div>
         </div></div>
       </div>
@@ -830,7 +1383,7 @@ document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'login
       </table>
 
       <div class="callout danger">
-        <div class="callout-ico">🚫</div>
+        <div class="callout-ico"><span class="cico cico-forbidden"></span></div>
         <div class="callout-text">Повторные попытки обойти защиту AI-чата фиксируются системой <b>FernieX Defender</b>: после 10 предупреждений аккаунт блокируется в чате навсегда.</div>
       </div>
     </section>
@@ -885,6 +1438,15 @@ function toggleEp(head){
   const ep = head.closest('.endpoint');
   document.querySelectorAll('.endpoint').forEach(e=>{ if(e!==ep) e.classList.remove('open'); });
   ep.classList.toggle('open');
+}
+
+// Переключение вкладок с языками
+function switchTab(btn){
+  const tabs = btn.closest('.code-tabs');
+  tabs.querySelectorAll('.code-tab-btn').forEach(b=>b.classList.remove('active'));
+  tabs.querySelectorAll('.code-tab-panel').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  tabs.querySelector(`.code-tab-panel[data-lang="${btn.dataset.lang}"]`).classList.add('active');
 }
 
 // Копирование кода
