@@ -15,7 +15,6 @@
 html{scroll-behavior:smooth;}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
 ::selection{background:rgba(180,141,255,0.35);}
-
 .orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
 .orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:0.14;}
 .orb1{width:560px;height:560px;background:var(--p1);top:-220px;left:-160px;}
@@ -24,7 +23,6 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);-webk
 @keyframes drift{0%{transform:translate(0,0)}50%{transform:translate(30px,-40px)}100%{transform:translate(-20px,25px)}}
 .orb{animation:drift 22s ease-in-out infinite alternate;}
 .orb2{animation-delay:-8s;} .orb3{animation-delay:-15s;}
-
 /* ═══ TOPBAR ═══ */
 .topbar{position:sticky;top:0;z-index:200;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 1.75rem;background:rgba(8,2,15,0.82);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(180,141,255,0.14);}
 .tb-logo{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;letter-spacing:-.5px;display:flex;align-items:center;gap:9px;}
@@ -35,7 +33,6 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);-webk
 .tb-btn{display:inline-flex;align-items:center;gap:7px;font-size:.75rem;font-weight:600;padding:8px 16px;border-radius:100px;cursor:pointer;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:var(--muted2);transition:all .2s;text-decoration:none;}
 .tb-btn:hover{color:#fff;border-color:rgba(180,141,255,0.3);background:rgba(180,141,255,0.08);}
 .tb-menu-toggle{display:none;background:none;border:1px solid rgba(255,255,255,0.12);border-radius:10px;width:38px;height:38px;color:var(--text);font-size:1.1rem;cursor:pointer;}
-
 /* ═══ LAYOUT ═══ */
 .layout{position:relative;z-index:2;display:flex;max-width:1400px;margin:0 auto;}
 .sidebar{width:270px;flex-shrink:0;padding:2rem 1rem 4rem 1.75rem;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;}
@@ -48,9 +45,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);-webk
 .side-link.active{color:#fff;background:rgba(180,141,255,0.13);border-color:rgba(180,141,255,0.22);}
 .side-link.active::before{content:'';position:absolute;left:-1.75rem;top:22%;bottom:22%;width:3px;border-radius:0 3px 3px 0;background:linear-gradient(to bottom,var(--p1),var(--p2));}
 .side-ico{width:16px;text-align:center;font-size:.85rem;flex-shrink:0;}
-
 .main{flex:1;min-width:0;padding:2rem 2.5rem 8rem;}
-
 /* ═══ HERO ═══ */
 .hero{padding:3.5rem 0 3rem;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:3rem;}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.68rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding:6px 14px;border-radius:100px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.09);margin-bottom:1.25rem;}
@@ -64,7 +59,6 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);-webk
 .hero-btn.primary:hover{transform:translateY(-1px);box-shadow:0 12px 32px rgba(180,141,255,0.28);}
 .hero-btn.ghost{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:var(--muted2);}
 .hero-btn.ghost:hover{color:#fff;border-color:rgba(255,255,255,0.2);}
-
 /* ═══ SECTIONS ═══ */
 .doc-section{margin-bottom:4.5rem;scroll-margin-top:88px;}
 .doc-section h2{font-family:'Syne',sans-serif;font-size:1.65rem;font-weight:800;letter-spacing:-.6px;margin-bottom:.6rem;display:flex;align-items:center;gap:12px;}
@@ -76,14 +70,12 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);-webk
 .doc-section li{margin-bottom:.35rem;}
 .doc-section li b, .doc-section p b{color:rgba(255,255,255,.88);font-weight:600;}
 .doc-section code.inline{font-family:'JetBrains Mono',monospace;font-size:.8em;background:rgba(180,141,255,0.1);border:1px solid rgba(180,141,255,0.2);color:#c8acff;padding:2px 7px;border-radius:6px;}
-
 /* ═══ CARD ═══ */
 .card{background:rgba(20,15,32,0.55);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:1.5rem;position:relative;overflow:hidden;margin-bottom:1.25rem;transition:transform .25s ease,background .25s ease,border-color .25s ease,box-shadow .25s ease;cursor:default;}
 @media(hover:hover) and (pointer:fine){
   .card:hover{transform:scale(1.015);background:rgba(180,141,255,0.08);border-color:rgba(180,141,255,0.3);box-shadow:0 10px 28px rgba(180,141,255,0.16);}
 }
 .card::before{content:'';position:absolute;top:0;left:6%;right:6%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.25) 40%,rgba(255,255,255,0.5) 50%,rgba(255,255,255,0.25) 60%,transparent);}
-
 /* ═══ ENDPOINT CARD ═══ */
 .endpoint{background:rgba(16,10,26,0.6);border:1px solid rgba(255,255,255,0.08);border-radius:16px;margin-bottom:1.1rem;overflow:hidden;transition:border-color .2s;}
 .endpoint:hover{border-color:rgba(180,141,255,0.22);}
@@ -111,7 +103,6 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);-webk
 .param-table td.pname{font-family:'JetBrains Mono',monospace;color:#e8dcff;font-size:.76rem;}
 .param-req{font-size:.58rem;font-weight:700;padding:1px 7px;border-radius:100px;background:rgba(255,107,107,0.12);color:var(--red);border:1px solid rgba(255,107,107,0.25);margin-left:5px;}
 .param-opt{font-size:.58rem;font-weight:700;padding:1px 7px;border-radius:100px;background:rgba(255,255,255,0.06);color:var(--muted);border:1px solid rgba(255,255,255,0.1);margin-left:5px;}
-
 /* ═══ CODE BLOCK ═══ */
 .code-wrap{position:relative;background:#0a0512;border:1px solid rgba(255,255,255,0.08);border-radius:13px;margin:.75rem 0 1.25rem;overflow:hidden;}
 .code-head{display:flex;align-items:center;justify-content:space-between;padding:.55rem .9rem;background:rgba(255,255,255,0.03);border-bottom:1px solid rgba(255,255,255,0.06);}
@@ -124,7 +115,6 @@ pre::-webkit-scrollbar{height:6px;}
 pre::-webkit-scrollbar-thumb{background:rgba(180,141,255,0.25);border-radius:100px;}
 code{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;color:#dcd6f5;white-space:pre;}
 .tok-key{color:#7eb8ff;} .tok-str{color:#a8e6b8;} .tok-num{color:#ffb87a;} .tok-com{color:rgba(255,255,255,0.32);font-style:italic;} .tok-kw{color:#ff9ed2;} .tok-fn{color:#c8acff;}
-
 /* ═══ CALLOUTS ═══ */
 .callout{display:flex;gap:12px;padding:1rem 1.15rem;border-radius:13px;margin:1.25rem 0;max-width:760px;transition:transform .25s ease,filter .25s ease,box-shadow .25s ease;cursor:default;}
 @media(hover:hover) and (pointer:fine){
@@ -137,7 +127,6 @@ code{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;col
 .callout.warn{background:rgba(255,184,122,0.07);border:1px solid rgba(255,184,122,0.2);}
 .callout.danger{background:rgba(255,107,107,0.07);border:1px solid rgba(255,107,107,0.2);}
 .callout.ok{background:rgba(78,205,196,0.07);border:1px solid rgba(78,205,196,0.2);}
-
 /* ═══ STEPS ═══ */
 .steps{max-width:760px;margin-bottom:1.5rem;}
 .step{display:flex;gap:1rem;padding-bottom:1.5rem;position:relative;}
@@ -146,7 +135,6 @@ code{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;col
 .step-content{padding-top:3px;}
 .step-content h4{font-size:.9rem;font-weight:700;margin-bottom:.3rem;color:#fff;}
 .step-content p{margin-bottom:.5rem;}
-
 /* ═══ TYPE CARDS GRID (для типов приложений) ═══ */
 .type-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.6rem;max-width:760px;margin-bottom:1.5rem;}
 .type-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:.85rem .5rem;text-align:center;transition:transform .25s ease,background .25s ease,border-color .25s ease,box-shadow .25s ease;cursor:default;}
@@ -155,7 +143,6 @@ code{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;col
 }
 .type-ico{font-size:1.3rem;margin-bottom:.3rem;}
 .type-lbl{font-size:.68rem;font-weight:600;color:var(--muted2);}
-
 /* ═══ ERROR TABLE ═══ */
 .err-table-wrap{width:100%;max-width:760px;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:1.5rem;}
 .err-table-wrap::-webkit-scrollbar{height:6px;}
@@ -164,7 +151,6 @@ code{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;col
 .err-table th{text-align:left;font-size:.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);padding:9px 12px;border-bottom:1px solid rgba(255,255,255,0.09);}
 .err-table td{padding:11px 12px;font-size:.82rem;color:var(--muted2);border-bottom:1px solid rgba(255,255,255,0.05);}
 .err-table td.errcode{font-family:'JetBrains Mono',monospace;color:var(--red);font-size:.78rem;}
-
 /* ═══ SDK METHOD CARD ═══ */
 .sdk-method{background:rgba(20,15,32,0.55);border:1px solid rgba(255,255,255,0.08);border-radius:15px;padding:1.25rem 1.4rem;margin-bottom:1rem;max-width:760px;transition:transform .25s ease,background .25s ease,border-color .25s ease,box-shadow .25s ease;cursor:default;}
 @media(hover:hover) and (pointer:fine){
@@ -173,17 +159,14 @@ code{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;col
 .sdk-sig{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:#c8acff;margin-bottom:.6rem;font-weight:600;}
 .sdk-sig .fn{color:#fff;}
 .sdk-desc{font-size:.83rem;color:var(--muted2);line-height:1.7;}
-
 /* ═══ FOOTER ═══ */
 .doc-footer{border-top:1px solid rgba(255,255,255,0.07);padding-top:2rem;margin-top:3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
 .footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:.9rem;display:flex;align-items:center;gap:7px;}
 .footer-txt{font-size:.72rem;color:var(--muted);}
-
 /* ═══ SCROLL TOP ═══ */
 .totop{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:rgba(20,15,32,0.85);border:1px solid rgba(180,141,255,0.3);color:var(--p1);display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(10px);z-index:150;opacity:0;pointer-events:none;transition:opacity .25s,transform .2s;}
 .totop.show{opacity:1;pointer-events:all;}
 .totop:hover{transform:translateY(-2px);}
-
 @media(max-width:980px){
   .sidebar{position:fixed;left:0;top:64px;bottom:0;width:270px;background:rgba(8,2,15,0.98);backdrop-filter:blur(20px);z-index:190;transform:translateX(-100%);transition:transform .25s ease;border-right:1px solid rgba(180,141,255,0.15);}
   .sidebar.open{transform:translateX(0);}
@@ -213,94 +196,69 @@ code{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;col
 /* ═══ CSS-ИКОНКИ ═══ */
 .cico{display:inline-block;position:relative;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;}
 .cico::before,.cico::after{content:'';position:absolute;box-sizing:border-box;}
-
 .cico-key{color:#c8acff;animation:cicoWiggle 3s ease-in-out infinite;}
 .cico-key::before{width:.5em;height:.5em;top:0;left:0;border:.1em solid currentColor;border-radius:50%;}
 .cico-key::after{width:.5em;height:.1em;top:.4em;left:.35em;background:currentColor;box-shadow:.15em .16em 0 0 currentColor,.3em .16em 0 0 currentColor;}
 @keyframes cicoWiggle{0%,80%,100%{transform:rotate(0)}85%{transform:rotate(-15deg)}92%{transform:rotate(10deg)}}
-
 .cico-book::before{width:.85em;height:.65em;top:.15em;left:.05em;border:.09em solid #7eb8ff;border-radius:.08em;}
 .cico-book::after{width:.09em;height:.65em;top:.15em;left:.45em;background:#7eb8ff;}
-
 .cico-bolt{color:var(--orange);animation:cicoFlicker 2.2s ease-in-out infinite;}
 .cico-bolt::before{width:0;height:0;top:0;left:.1em;border-style:solid;border-width:0 .12em .5em .3em;border-color:transparent transparent currentColor transparent;}
 .cico-bolt::after{width:0;height:0;top:.38em;left:.05em;border-style:solid;border-width:.5em .3em 0 .12em;border-color:currentColor transparent transparent transparent;}
 @keyframes cicoFlicker{0%,100%{opacity:1}45%{opacity:1}50%{opacity:.4}55%{opacity:1}}
-
 .cico-box::before{width:.85em;height:.6em;top:.2em;left:.05em;border:.08em solid var(--orange);border-radius:.06em;}
 .cico-box::after{width:.85em;height:.08em;top:.44em;left:.05em;background:var(--orange);}
-
 .cico-lock::before{width:.4em;height:.35em;top:.15em;left:0;border:.09em solid #b48dff;border-bottom:none;border-radius:.35em .35em 0 0;}
 .cico-lock::after{width:.6em;height:.42em;top:.4em;left:-.1em;background:#b48dff;border-radius:.08em;}
-
 .cico-mail{animation:cicoShake 3.5s ease-in-out infinite;}
 .cico-mail::before{width:.9em;height:.62em;top:.19em;left:.05em;border:.08em solid #ff9ed2;border-radius:.06em;}
 .cico-mail::after{width:.55em;height:.55em;top:.19em;left:.23em;border-left:.08em solid #ff9ed2;border-top:.08em solid #ff9ed2;transform:rotate(45deg);}
 @keyframes cicoShake{0%,90%,100%{transform:rotate(0)}92%{transform:rotate(-8deg)}96%{transform:rotate(8deg)}}
-
 .cico-check{color:var(--teal);animation:cicoPop 2.6s ease-in-out infinite;}
 .cico-check::before{width:.85em;height:.85em;top:.05em;left:.05em;border:.09em solid currentColor;border-radius:50%;}
 .cico-check::after{width:.4em;height:.22em;top:.3em;left:.22em;border-left:.1em solid currentColor;border-bottom:.1em solid currentColor;transform:rotate(-45deg);}
 @keyframes cicoPop{0%,80%,100%{transform:scale(1)}88%{transform:scale(1.2)}}
-
 .cico-coin::before{width:.9em;height:.9em;top:.05em;left:.05em;border-radius:50%;background:linear-gradient(135deg,#ffd77a,#ffb87a);}
 .cico-coin::after{content:'$';position:absolute;top:.03em;left:.24em;font-size:.6em;font-weight:800;color:#5a3d00;}
-
 .cico-pencil::before{width:.9em;height:.18em;top:.4em;left:.05em;background:#ffb87a;transform:rotate(-40deg);border-radius:.05em;}
 .cico-pencil::after{width:0;height:0;top:.72em;left:.02em;border-style:solid;border-width:.1em .16em 0 0;border-color:#c8acff transparent transparent transparent;transform:rotate(-40deg);}
-
 .cico-chat::before{width:.9em;height:.65em;top:.05em;left:.05em;background:#7eb8ff;border-radius:.2em .2em .2em .02em;}
 .cico-chat::after{width:0;height:0;top:.62em;left:.1em;border-style:solid;border-width:.15em .15em 0 0;border-color:#7eb8ff transparent transparent transparent;}
-
 .cico-wave::before,.cico-wave::after{width:.22em;height:.22em;border-radius:50%;background:var(--teal);top:.4em;animation:cicoWaveMv 1.4s ease-in-out infinite;}
 .cico-wave::before{left:.1em;}
 .cico-wave::after{left:.5em;animation-delay:.25s;}
 @keyframes cicoWaveMv{0%,100%{transform:translateY(0)}50%{transform:translateY(-.35em)}}
-
 .cico-chart::before{width:.16em;height:.4em;top:.45em;left:.1em;background:#7eb8ff;box-shadow:.3em -.15em 0 0 #7eb8ff,.6em -.3em 0 0 #7eb8ff;animation:cicoBars 2s ease-in-out infinite;}
 @keyframes cicoBars{0%,100%{opacity:.6}50%{opacity:1}}
-
 .cico-search::before{width:.55em;height:.55em;top:0;left:0;border:.1em solid #4ecdc4;border-radius:50%;}
 .cico-search::after{width:.35em;height:.1em;top:.55em;left:.5em;background:#4ecdc4;transform:rotate(45deg);border-radius:.1em;}
-
 .cico-plane{color:#7eb8ff;animation:cicoFly 3s ease-in-out infinite;}
 .cico-plane::before{width:0;height:0;top:.1em;left:0;border-style:solid;border-width:.25em .9em .25em 0;border-color:transparent currentColor transparent transparent;transform:rotate(20deg);}
 @keyframes cicoFly{0%,100%{transform:translate(0,0)}50%{transform:translate(.15em,-.1em)}}
-
 .cico-warn{color:var(--orange);animation:cicoPulseColor 2s ease-in-out infinite;}
 .cico-warn::before{width:0;height:0;top:0;left:0;border-style:solid;border-width:0 .5em .85em .5em;border-color:transparent transparent currentColor transparent;}
 .cico-warn::after{content:'!';position:absolute;top:.28em;left:.36em;font-size:.55em;font-weight:800;color:#08020f;}
 @keyframes cicoPulseColor{0%,100%{opacity:1}50%{opacity:.55}}
-
 .cico-shield::before{width:.75em;height:.85em;top:0;left:.1em;background:var(--teal);clip-path:polygon(50% 0,100% 20%,100% 55%,50% 100%,0 55%,0 20%);}
-
 .cico-question::before{content:'?';position:absolute;top:-.05em;left:.22em;font-size:.9em;font-weight:800;color:#c8acff;}
-
 .cico-globe::before{width:.85em;height:.85em;top:.05em;left:.05em;border:.09em solid #7eb8ff;border-radius:50%;}
 .cico-globe::after{width:.85em;height:.09em;top:.46em;left:.05em;background:#7eb8ff;box-shadow:0 -.28em 0 -.03em #7eb8ff,0 .28em 0 -.03em #7eb8ff;}
-
 .cico-mobile::before{width:.5em;height:.85em;top:.05em;left:.25em;border:.08em solid #b48dff;border-radius:.1em;}
 .cico-mobile::after{width:.16em;height:.16em;top:.66em;left:.42em;border-radius:50%;background:#b48dff;}
-
 .cico-robot::before{width:.75em;height:.6em;top:.2em;left:.12em;background:#ff9ed2;border-radius:.15em;}
 .cico-robot::after{width:.14em;height:.14em;top:.4em;left:.3em;border-radius:50%;background:#08020f;box-shadow:.3em 0 0 0 #08020f;}
-
 .cico-gamepad::before{width:1em;height:.5em;top:.25em;left:0;background:#a8e6b8;border-radius:.3em;}
 .cico-gamepad::after{width:.14em;height:.14em;top:.42em;left:.65em;border-radius:50%;background:#08020f;box-shadow:-.22em 0 0 0 #08020f;}
-
 .cico-gear{color:var(--muted2);animation:cicoSpin 4s linear infinite;}
 .cico-gear::before{width:.9em;height:.9em;top:.05em;left:.05em;background:repeating-conic-gradient(currentColor 0 20deg,transparent 20deg 45deg);border-radius:50%;-webkit-mask:radial-gradient(circle,transparent 55%,#000 58%);mask:radial-gradient(circle,transparent 55%,#000 58%);}
 @keyframes cicoSpin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-
 .cico-bulb{color:#ffe08a;animation:cicoGlow 2.4s ease-in-out infinite;}
 .cico-bulb::before{width:.6em;height:.6em;top:0;left:.2em;border-radius:50%;background:currentColor;}
 .cico-bulb::after{width:.3em;height:.22em;top:.62em;left:.35em;background:rgba(255,255,255,.5);border-radius:.05em;}
 @keyframes cicoGlow{0%,100%{filter:drop-shadow(0 0 1px #ffe08a)}50%{filter:drop-shadow(0 0 6px #ffe08a)}}
-
 .cico-forbidden{color:var(--red);animation:cicoPulseColor 1.6s ease-in-out infinite;}
 .cico-forbidden::before{width:.85em;height:.85em;top:.05em;left:.05em;border:.1em solid currentColor;border-radius:50%;}
 .cico-forbidden::after{width:.85em;height:.1em;top:.45em;left:.05em;background:currentColor;transform:rotate(45deg);}
-
 /* ═══ CODE TABS ═══ */
 .code-tabs{margin:.75rem 0 1.25rem;max-width:760px;}
 .code-tabs-nav{display:flex;gap:.35rem;}
@@ -315,7 +273,6 @@ code{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;col
 </head>
 <body>
 <div class="orbs"><div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div></div>
-
 <header class="topbar">
   <div style="display:flex;align-items:center;">
     <button class="tb-menu-toggle" id="menuToggle">☰</button>
@@ -325,7 +282,6 @@ code{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;col
     <a href="https://ferniex-id.vercel.app" class="tb-btn"><span class="cico cico-key"></span> Личный кабинет</a>
   </div>
 </header>
-
 <div class="layout">
   <!-- ═══ SIDEBAR ═══ -->
   <aside class="sidebar" id="sidebar">
@@ -352,6 +308,7 @@ code{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;col
       <a class="side-link" data-target="ai-chat"><span class="side-ico"><span class="cico cico-chat"></span></span>Отправка запроса</a>
       <a class="side-link" data-target="ai-stream"><span class="side-ico"><span class="cico cico-wave"></span></span>Потоковый ответ</a>
       <a class="side-link" data-target="ai-usage"><span class="side-ico"><span class="cico cico-chart"></span></span>Лимиты токенов</a>
+      <a class="side-link" data-target="ai-custom"><span class="side-ico"><span class="cico cico-gear"></span></span>Aurin-Custom</a>
     </div>
     <div class="side-group">
       <div class="side-label">Дополнительно</div>
@@ -365,10 +322,8 @@ code{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;col
       <a class="side-link" data-target="faq"><span class="side-ico"><span class="cico cico-question"></span></span>FAQ</a>
     </div>
   </aside>
-
   <!-- ═══ MAIN ═══ -->
   <main class="main">
-
     <div class="hero">
       <div class="hero-eyebrow"><div class="hero-dot"></div>Документация · v1</div>
       <h1>API <span class="grad">FernieID</span><br>для разработчиков</h1>
@@ -378,32 +333,27 @@ code{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;col
         <a href="#quickstart" class="hero-btn ghost"><span class="cico cico-bolt"></span> Быстрый старт</a>
       </div>
     </div>
-
     <!-- ══════════ ВВЕДЕНИЕ ══════════ -->
     <section class="doc-section" id="intro">
       <h2><span class="sec-num">01</span> Введение</h2>
       <p class="lead">FernieID — это система авторизации и баланса, общая для всех проектов FernieX: Telegram-бота, AI-чата, игровой платформы, Minecraft-сервера и сторонних приложений разработчиков. API-ключ даёт вашему приложению доступ ко всем этим возможностям через один REST-интерфейс.</p>
-
       <h3>Что умеет API</h3>
       <ul>
         <li><b>Аутентификация</b> — вход пользователей FernieID с двухфакторным подтверждением через Telegram.</li>
         <li><b>Баланс</b> — чтение и изменение баланса пользователя (DC, семена и другие валюты бота).</li>
-        <li><b>AI-чат</b> — доступ к модели Aurin (на базе Mistral) с потоковыми ответами и自动 поиском в интернете.</li>
+        <li><b>AI-чат</b> — доступ к модели Aurin (на базе Mistral) с потоковыми ответами и автоматическим поиском в интернете.</li>
         <li><b>Уведомления</b> — отправка сообщений пользователю в Telegram от имени вашего приложения.</li>
         <li><b>Веб-поиск</b> — обёртка над поисковой выдачей для использования в своих ботах и приложениях.</li>
       </ul>
-
       <div class="callout info">
         <div class="callout-ico"><span class="cico cico-bulb"></span></div>
         <div class="callout-text"><b>Базовый URL API:</b> <code class="inline" style="background:transparent;border:none;padding:0;color:#a8c8ff;">https://ferniex-id.vercel.app</code> — все примеры ниже используют этот адрес.</div>
       </div>
     </section>
-
     <!-- ══════════ БЫСТРЫЙ СТАРТ ══════════ -->
     <section class="doc-section" id="quickstart">
       <h2><span class="sec-num">02</span> Быстрый старт</h2>
       <p class="lead">Путь от нуля до первого запроса — четыре шага.</p>
-
       <div class="steps">
         <div class="step">
           <div class="step-num">1</div>
@@ -435,12 +385,10 @@ code{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;col
         </div>
       </div>
     </section>
-
     <!-- ══════════ ПОЛУЧЕНИЕ КЛЮЧА ══════════ -->
     <section class="doc-section" id="keys">
       <h2><span class="sec-num">03</span> Получение API-ключа</h2>
       <p class="lead">Ключи создаются и управляются в личном кабинете FernieID, раздел <b>«API-ключи»</b>. Никакого отдельного консольного доступа — всё через тот же аккаунт, которым пользуется человек.</p>
-
       <h3>Типы приложений</h3>
       <p>При создании ключа нужно выбрать тип — это влияет только на отображение в списке и внутреннюю аналитику, на права доступа не влияет.</p>
       <div class="type-grid">
@@ -450,30 +398,25 @@ code{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;col
         <div class="type-card"><div class="type-ico"><span class="cico cico-gamepad"></span></div><div class="type-lbl">Игра</div></div>
         <div class="type-card"><div class="type-ico"><span class="cico cico-gear"></span></div><div class="type-lbl">Другое</div></div>
       </div>
-
       <div class="callout warn">
         <div class="callout-ico"><span class="cico cico-robot"></span></div>
         <div class="callout-text">Пополнение баланса (<code class="inline" style="background:transparent;border:none;padding:0;">action: "add"</code> в <code class="inline" style="background:transparent;border:none;padding:0;">/api/edit/balance</code>) доступно <b>только ключам с типом «Бот»</b>. Остальные типы могут только списывать (<code class="inline" style="background:transparent;border:none;padding:0;">spend</code>).</div>
       </div>
-
       <h3>Лимиты</h3>
       <ul>
         <li>Максимум <b>10 ключей</b> на один аккаунт (для администраторов сайта лимит снят).</li>
         <li>Полный текст ключа показывается только при создании — дальше он маскируется в интерфейсе.</li>
         <li>Каждый ключ можно переименовать, изменить тип и приложение, посмотреть логи запросов или удалить.</li>
       </ul>
-
       <div class="callout danger">
         <div class="callout-ico"><span class="cico cico-warn"></span></div>
         <div class="callout-text">Ключ равнозначен паролю приложения. Не публикуй его в клиентском JS-коде для чувствительных операций (изменение баланса) — используй его только с бэкенда, если это не встроенный SDK-поток входа.</div>
       </div>
     </section>
-
     <!-- ══════════ SDK ══════════ -->
     <section class="doc-section" id="sdk">
       <h2><span class="sec-num">04</span> Подключение SDK</h2>
       <p class="lead">Для браузерных приложений проще всего подключить готовый скрипт <code class="inline">fernieid-sdk.js</code> — он рисует окно входа с 2FA, хранит сессию в <code class="inline">localStorage</code> и даёт удобные методы для баланса и AI.</p>
-
       <div class="code-wrap">
         <div class="code-head"><span class="code-lang">html</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
         <pre><code><span class="tok-kw">&lt;script</span> <span class="tok-key">src</span>=<span class="tok-str">"/sdk/fernieid-sdk.js"</span><span class="tok-kw">&gt;&lt;/script&gt;</span>
@@ -481,7 +424,6 @@ code{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;col
   FernieID.<span class="tok-fn">init</span>(<span class="tok-str">'fid_твой_ключ_здесь'</span>);
 <span class="tok-kw">&lt;/script&gt;</span></code></pre>
       </div>
-
       <h3>Открыть окно входа</h3>
       <p>Метод возвращает промис, который резолвится данными пользователя после успешного входа (включая прохождение 2FA, если Telegram привязан).</p>
       <div class="code-wrap">
@@ -490,9 +432,7 @@ code{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.7;col
 <span class="tok-com">// { success: true, userId, username, role, telegramLinked }</span>
 console.<span class="tok-fn">log</span>(<span class="tok-str">'Вошёл как'</span>, user.username);</code></pre>
       </div>
-
       <h3>Методы SDK — справочник</h3>
-
       <div class="sdk-method">
         <div class="sdk-sig">FernieID.<span class="fn">init</span>(apiKey: string)</div>
         <div class="sdk-desc">Инициализация SDK с твоим API-ключом. Вызывается один раз при загрузке страницы, до любых других методов.</div>
@@ -534,12 +474,10 @@ console.<span class="tok-fn">log</span>(<span class="tok-str">'Вошёл как
         <div class="sdk-desc">Веб-поиск через встроенный прокси (Serper / DuckDuckGo фолбэк).</div>
       </div>
     </section>
-
     <!-- ══════════ AUTH: LOGIN ══════════ -->
     <section class="doc-section" id="auth-login">
       <h2><span class="sec-num">05</span> Аутентификация</h2>
       <p class="lead">Вход происходит по логину и паролю FernieID. Если у пользователя привязан Telegram, сервер сразу отправляет 6-значный код и ожидает подтверждения — это обязательный второй фактор, обойти его нельзя.</p>
-
       <div class="endpoint" data-ep>
         <div class="ep-head" onclick="toggleEp(this)">
           <span class="ep-method post">POST</span>
@@ -572,14 +510,11 @@ console.<span class="tok-fn">log</span>(<span class="tok-str">'Вошёл как
               <div class="code-wrap">
                 <div class="code-head"><span class="code-lang">javascript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
                 <pre><code><span class="tok-kw">const</span> API_KEY = <span class="tok-str">'fid_твой_ключ'</span>; <span class="tok-com">// хранится на бэкенде, не в клиентском коде</span>
-
 document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'loginBtn'</span>).onclick = <span class="tok-kw">async</span> () =&gt; {
   <span class="tok-com">// значения берём из того, что реально ввёл пользователь на странице</span>
   <span class="tok-kw">const</span> username = document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'loginUsername'</span>).value.<span class="tok-fn">trim</span>();
   <span class="tok-kw">const</span> password = document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'loginPassword'</span>).value;
-
   <span class="tok-kw">if</span> (!username || !password) <span class="tok-kw">return</span> <span class="tok-fn">alert</span>(<span class="tok-str">'Заполни логин и пароль'</span>);
-
   <span class="tok-kw">const</span> res = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/auth/login'</span>, {
     method: <span class="tok-str">'POST'</span>,
     headers: { <span class="tok-str">'Content-Type'</span>: <span class="tok-str">'application/json'</span> },
@@ -587,7 +522,6 @@ document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'login
   });
   <span class="tok-kw">const</span> data = <span class="tok-kw">await</span> res.<span class="tok-fn">json</span>();
   <span class="tok-com">// { success: true, require2fa: true, userId: 42, telegramLinked: true }</span>
-
   <span class="tok-kw">if</span> (data.require2fa) {
     <span class="tok-com">// показываем пользователю поле для ввода кода из Telegram</span>
     <span class="tok-fn">showCodeInput</span>(data.userId);
@@ -599,27 +533,22 @@ document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'login
               <div class="code-wrap">
                 <div class="code-head"><span class="code-lang">typescript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
                 <pre><code><span class="tok-kw">const</span> API_KEY<span class="tok-ts">: string</span> = <span class="tok-str">'fid_твой_ключ'</span>; <span class="tok-com">// хранится на бэкенде, не в клиентском коде</span>
-
 <span class="tok-kw">interface</span> <span class="tok-fn">LoginResponse</span> {
   success<span class="tok-ts">: boolean</span>;
   require2fa<span class="tok-ts">?: boolean</span>;
   userId<span class="tok-ts">?: number</span>;
   telegramLinked<span class="tok-ts">?: boolean</span>;
 }
-
 document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'loginBtn'</span>)!.<span class="tok-fn">addEventListener</span>(<span class="tok-str">'click'</span>, <span class="tok-kw">async</span> () =&gt; {
   <span class="tok-kw">const</span> username = (document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'loginUsername'</span>) <span class="tok-kw">as</span> HTMLInputElement).value.<span class="tok-fn">trim</span>();
   <span class="tok-kw">const</span> password = (document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'loginPassword'</span>) <span class="tok-kw">as</span> HTMLInputElement).value;
-
   <span class="tok-kw">if</span> (!username || !password) <span class="tok-kw">return</span> <span class="tok-fn">alert</span>(<span class="tok-str">'Заполни логин и пароль'</span>);
-
   <span class="tok-kw">const</span> res = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/auth/login'</span>, {
     method: <span class="tok-str">'POST'</span>,
     headers: { <span class="tok-str">'Content-Type'</span>: <span class="tok-str">'application/json'</span> },
     body: <span class="tok-fn">JSON.stringify</span>({ apiKey: API_KEY, username, password })
   });
   <span class="tok-kw">const</span> data<span class="tok-ts">: LoginResponse</span> = <span class="tok-kw">await</span> res.<span class="tok-fn">json</span>();
-
   <span class="tok-kw">if</span> (data.require2fa) {
     <span class="tok-fn">showCodeInput</span>(data.userId!);
   }
@@ -630,9 +559,7 @@ document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'login
               <div class="code-wrap">
                 <div class="code-head"><span class="code-lang">python</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
                 <pre><code><span class="tok-kw">import</span> requests
-
 API_KEY = <span class="tok-str">"fid_твой_ключ"</span>
-
 <span class="tok-kw">def</span> <span class="tok-fn">login</span>(username: str, password: str) -&gt; dict:
     res = requests.<span class="tok-fn">post</span>(
         <span class="tok-str">"https://ferniex-id.vercel.app/api/auth/login"</span>,
@@ -640,11 +567,9 @@ API_KEY = <span class="tok-str">"fid_твой_ключ"</span>
     )
     data = res.<span class="tok-fn">json</span>()
     <span class="tok-com"># { "success": True, "require2fa": True, "userId": 42, "telegramLinked": True }</span>
-
     <span class="tok-kw">if</span> data.get(<span class="tok-str">"require2fa"</span>):
         <span class="tok-com"># дальше передай data["userId"] в verify_2fa()</span>
         <span class="tok-kw">pass</span>
-
     <span class="tok-kw">return</span> data</code></pre>
               </div>
             </div>
@@ -656,12 +581,10 @@ API_KEY = <span class="tok-str">"fid_твой_ключ"</span>
         </div></div>
       </div>
     </section>
-
     <!-- ══════════ AUTH: 2FA ══════════ -->
     <section class="doc-section" id="auth-2fa">
       <h2><span class="sec-num">06</span> Подтверждение 2FA</h2>
       <p class="lead">Код приходит в Telegram-бот пользователя, действителен 5 минут, одноразовый.</p>
-
       <div class="endpoint" data-ep>
         <div class="ep-head" onclick="toggleEp(this)">
           <span class="ep-method post">POST</span>
@@ -697,7 +620,6 @@ API_KEY = <span class="tok-str">"fid_твой_ключ"</span>
     <span class="tok-com">// код берём из того, что пользователь реально ввёл в поле</span>
     <span class="tok-kw">const</span> code = document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'twoFaCode'</span>).value.<span class="tok-fn">trim</span>();
     <span class="tok-kw">if</span> (code.length !== <span class="tok-num">6</span>) <span class="tok-kw">return</span> <span class="tok-fn">alert</span>(<span class="tok-str">'Введи 6-значный код из Telegram'</span>);
-
     <span class="tok-kw">const</span> res = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/auth/verify-2fa'</span>, {
       method: <span class="tok-str">'POST'</span>,
       headers: { <span class="tok-str">'Content-Type'</span>: <span class="tok-str">'application/json'</span> },
@@ -705,7 +627,6 @@ API_KEY = <span class="tok-str">"fid_твой_ключ"</span>
     });
     <span class="tok-kw">const</span> data = <span class="tok-kw">await</span> res.<span class="tok-fn">json</span>();
     <span class="tok-com">// { success: true, userId: 42, username: 'fernie', role: 'user' }</span>
-
     <span class="tok-kw">if</span> (data.success) {
       <span class="tok-com">// сохраняем сессию, открываем личный кабинет и т.д.</span>
     }
@@ -722,19 +643,16 @@ API_KEY = <span class="tok-str">"fid_твой_ключ"</span>
   username<span class="tok-ts">?: string</span>;
   role<span class="tok-ts">?: string</span>;
 }
-
 <span class="tok-kw">function</span> <span class="tok-fn">showCodeInput</span>(userId<span class="tok-ts">: number</span>)<span class="tok-ts">: void</span> {
   document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'confirmCodeBtn'</span>)!.<span class="tok-fn">addEventListener</span>(<span class="tok-str">'click'</span>, <span class="tok-kw">async</span> () =&gt; {
     <span class="tok-kw">const</span> code = (document.<span class="tok-fn">getElementById</span>(<span class="tok-str">'twoFaCode'</span>) <span class="tok-kw">as</span> HTMLInputElement).value.<span class="tok-fn">trim</span>();
     <span class="tok-kw">if</span> (code.length !== <span class="tok-num">6</span>) <span class="tok-kw">return</span> <span class="tok-fn">alert</span>(<span class="tok-str">'Введи 6-значный код из Telegram'</span>);
-
     <span class="tok-kw">const</span> res = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/auth/verify-2fa'</span>, {
       method: <span class="tok-str">'POST'</span>,
       headers: { <span class="tok-str">'Content-Type'</span>: <span class="tok-str">'application/json'</span> },
       body: <span class="tok-fn">JSON.stringify</span>({ apiKey: API_KEY, userId, code })
     });
     <span class="tok-kw">const</span> data<span class="tok-ts">: VerifyResponse</span> = <span class="tok-kw">await</span> res.<span class="tok-fn">json</span>();
-
     <span class="tok-kw">if</span> (data.success) {
       <span class="tok-com">// сохраняем сессию, открываем личный кабинет и т.д.</span>
     }
@@ -763,12 +681,10 @@ API_KEY = <span class="tok-str">"fid_твой_ключ"</span>
         </div></div>
       </div>
     </section>
-
     <!-- ══════════ AUTH: VERIFY KEY ══════════ -->
     <section class="doc-section" id="auth-verify">
       <h2><span class="sec-num">07</span> Проверка API-ключа</h2>
       <p class="lead">Используется, чтобы убедиться, что ключ валиден и активен — например, перед открытием окна логина.</p>
-
       <div class="endpoint" data-ep>
         <div class="ep-head" onclick="toggleEp(this)">
           <span class="ep-method post">POST</span>
@@ -809,7 +725,6 @@ API_KEY = <span class="tok-str">"fid_твой_ключ"</span>
   appName<span class="tok-ts">?: string</span>;
   type<span class="tok-ts">?: string</span>;
 }
-
 <span class="tok-kw">const</span> data<span class="tok-ts">: VerifyKeyResponse</span> = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/apikeys/verify'</span>, {
   method: <span class="tok-str">'POST'</span>,
   headers: { <span class="tok-str">'Content-Type'</span>: <span class="tok-str">'application/json'</span> },
@@ -821,7 +736,6 @@ API_KEY = <span class="tok-str">"fid_твой_ключ"</span>
               <div class="code-wrap">
                 <div class="code-head"><span class="code-lang">python</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
                 <pre><code><span class="tok-kw">import</span> requests
-
 data = requests.<span class="tok-fn">post</span>(
     <span class="tok-str">"https://ferniex-id.vercel.app/api/apikeys/verify"</span>,
     json={<span class="tok-str">"key"</span>: <span class="tok-str">"fid_твой_ключ"</span>},
@@ -833,12 +747,10 @@ data = requests.<span class="tok-fn">post</span>(
         </div></div>
       </div>
     </section>
-
     <!-- ══════════ BALANCE: GET ══════════ -->
     <section class="doc-section" id="balance-get">
       <h2><span class="sec-num">08</span> Получить баланс</h2>
       <p class="lead">Читает баланс пользователя напрямую из Telegram-бота (DC, семена, игровая валюта и т.д.) — данные всегда актуальны на момент запроса.</p>
-
       <div class="endpoint" data-ep>
         <div class="ep-head" onclick="toggleEp(this)">
           <span class="ep-method post">POST</span>
@@ -884,7 +796,6 @@ data = requests.<span class="tok-fn">post</span>(
   dc<span class="tok-ts">?: number</span>;
   seeds<span class="tok-ts">?: number</span>;
 }
-
 <span class="tok-kw">const</span> data<span class="tok-ts">: BalanceResponse</span> = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/balance/get'</span>, {
   method: <span class="tok-str">'POST'</span>,
   headers: { <span class="tok-str">'Content-Type'</span>: <span class="tok-str">'application/json'</span> },
@@ -914,12 +825,10 @@ data = requests.<span class="tok-fn">post</span>(
         </div></div>
       </div>
     </section>
-
     <!-- ══════════ BALANCE: EDIT ══════════ -->
     <section class="doc-section" id="balance-edit">
       <h2><span class="sec-num">09</span> Изменить баланс</h2>
       <p class="lead">Списывает или начисляет валюту через бота. Все операции логируются в историю ключа.</p>
-
       <div class="endpoint" data-ep>
         <div class="ep-head" onclick="toggleEp(this)">
           <span class="ep-method post">POST</span>
@@ -966,7 +875,6 @@ data = requests.<span class="tok-fn">post</span>(
   dc<span class="tok-ts">?: number</span>;
   seeds<span class="tok-ts">?: number</span>;
 }
-
 <span class="tok-kw">const</span> data<span class="tok-ts">: EditBalanceResponse</span> = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/edit/balance'</span>, {
   method: <span class="tok-str">'POST'</span>,
   headers: { <span class="tok-str">'Content-Type'</span>: <span class="tok-str">'application/json'</span> },
@@ -1003,12 +911,10 @@ data = requests.<span class="tok-fn">post</span>(
         </div></div>
       </div>
     </section>
-
     <!-- ══════════ AI CHAT ══════════ -->
     <section class="doc-section" id="ai-chat">
       <h2><span class="sec-num">10</span> AI Chat — разовый запрос</h2>
       <p class="lead">Доступ к модели <b>Aurin</b> — ассистенту FernieX-AI поверх Mistral, с автоматическим веб-поиском и чтением ссылок «под капотом». Внешне модель никогда не раскрывает свою базовую платформу.</p>
-
       <div class="endpoint" data-ep>
         <div class="ep-head" onclick="toggleEp(this)">
           <span class="ep-method post">POST</span>
@@ -1021,7 +927,8 @@ data = requests.<span class="tok-fn">post</span>(
             <tr><th>Поле</th><th>Тип</th><th>Описание</th></tr>
             <tr><td class="pname">apiKey<span class="param-req">обязателен</span></td><td>string</td><td>Твой API-ключ</td></tr>
             <tr><td class="pname">messages<span class="param-req">обязателен</span></td><td>array</td><td><code class="inline">[{ role: 'user', content: '...' }]</code></td></tr>
-            <tr><td class="pname">model<span class="param-opt">опционально</span></td><td>string</td><td><code class="inline">aurin-lite</code> / <code class="inline">mistral-medium</code> / <code class="inline">aurin</code> / <code class="inline">aurin-pro</code></td></tr>
+            <tr><td class="pname">model<span class="param-opt">опционально</span></td><td>string</td><td><code class="inline">aurin-lite</code> / <code class="inline">mistral-medium</code> / <code class="inline">aurin</code> / <code class="inline">aurin-pro</code> / <code class="inline">aurin-custom</code></td></tr>
+            <tr><td class="pname">system<span class="param-opt">опционально</span></td><td>string</td><td>Свой системный промпт. Учитывается для всех моделей, но по-настоящему нужен только для <code class="inline">aurin-custom</code> — см. раздел 13.</td></tr>
             <tr><td class="pname">userId<span class="param-opt">опционально</span></td><td>number</td><td>ID пользователя FernieID — даёт больший дневной лимит токенов вместо анонимного</td></tr>
             <tr><td class="pname">max_tokens<span class="param-opt">опционально</span></td><td>number</td><td>По умолчанию 8192</td></tr>
             <tr><td class="pname">stream<span class="param-opt">опционально</span></td><td>boolean</td><td><code class="inline">false</code> для этого эндпоинта</td></tr>
@@ -1054,7 +961,6 @@ data = requests.<span class="tok-fn">post</span>(
   choices: { message: { role<span class="tok-ts">: string</span>; content<span class="tok-ts">: string</span> } }[];
   usage: { total_tokens<span class="tok-ts">: number</span> };
 }
-
 <span class="tok-kw">const</span> data<span class="tok-ts">: ChatResponse</span> = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/chat'</span>, {
   method: <span class="tok-str">'POST'</span>,
   headers: { <span class="tok-str">'Content-Type'</span>: <span class="tok-str">'application/json'</span> },
@@ -1088,12 +994,10 @@ data = requests.<span class="tok-fn">post</span>(
         </div></div>
       </div>
     </section>
-
     <!-- ══════════ AI STREAM ══════════ -->
     <section class="doc-section" id="ai-stream">
       <h2><span class="sec-num">11</span> AI Chat — потоковый ответ</h2>
       <p class="lead">Тот же эндпоинт <code class="inline">/api/chat</code>, но с <code class="inline">stream: true</code> — ответ приходит частями по SSE (Server-Sent Events), удобно для «печатающегося» текста в UI.</p>
-
       <div class="code-tabs" data-tabs>
         <div class="code-tabs-nav">
           <button class="code-tab-btn active" data-lang="javascript" onclick="switchTab(this)">JavaScript</button>
@@ -1113,11 +1017,9 @@ data = requests.<span class="tok-fn">post</span>(
     messages: [{ role: <span class="tok-str">'user'</span>, content: <span class="tok-str">'Расскажи историю в 3 предложениях'</span> }]
   })
 });
-
 <span class="tok-kw">const</span> reader = res.body.<span class="tok-fn">getReader</span>();
 <span class="tok-kw">const</span> decoder = <span class="tok-kw">new</span> <span class="tok-fn">TextDecoder</span>();
 <span class="tok-kw">let</span> buffer = <span class="tok-str">''</span>;
-
 <span class="tok-kw">while</span> (<span class="tok-kw">true</span>) {
   <span class="tok-kw">const</span> { done, value } = <span class="tok-kw">await</span> reader.<span class="tok-fn">read</span>();
   <span class="tok-kw">if</span> (done) <span class="tok-kw">break</span>;
@@ -1147,11 +1049,9 @@ data = requests.<span class="tok-fn">post</span>(
     messages: [{ role: <span class="tok-str">'user'</span>, content: <span class="tok-str">'Расскажи историю в 3 предложениях'</span> }]
   })
 });
-
 <span class="tok-kw">const</span> reader = res.body!.<span class="tok-fn">getReader</span>();
 <span class="tok-kw">const</span> decoder = <span class="tok-kw">new</span> <span class="tok-fn">TextDecoder</span>();
 <span class="tok-kw">let</span> buffer<span class="tok-ts">: string</span> = <span class="tok-str">''</span>;
-
 <span class="tok-kw">while</span> (<span class="tok-kw">true</span>) {
   <span class="tok-kw">const</span> { done, value } = <span class="tok-kw">await</span> reader.<span class="tok-fn">read</span>();
   <span class="tok-kw">if</span> (done) <span class="tok-kw">break</span>;
@@ -1173,7 +1073,6 @@ data = requests.<span class="tok-fn">post</span>(
             <div class="code-head"><span class="code-lang">python</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
             <pre><code><span class="tok-kw">import</span> json
 <span class="tok-kw">import</span> requests
-
 <span class="tok-kw">with</span> requests.<span class="tok-fn">post</span>(
     <span class="tok-str">"https://ferniex-id.vercel.app/api/chat"</span>,
     json={
@@ -1196,7 +1095,6 @@ data = requests.<span class="tok-fn">post</span>(
           </div>
         </div>
       </div>
-
       <p>С SDK то же самое пишется в несколько строк:</p>
       <div class="code-wrap">
         <div class="code-head"><span class="code-lang">javascript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
@@ -1210,12 +1108,10 @@ data = requests.<span class="tok-fn">post</span>(
 );</code></pre>
       </div>
     </section>
-
     <!-- ══════════ AI USAGE ══════════ -->
     <section class="doc-section" id="ai-usage">
       <h2><span class="sec-num">12</span> Лимиты токенов</h2>
       <p class="lead">У AI-чата суточные лимиты в токенах, привязанные к пользователю FernieID (или к самому API-ключу для анонимных запросов).</p>
-
       <div class="err-table-wrap"><table class="err-table">
         <tr><th>Категория</th><th>Лимит в сутки</th></tr>
         <tr><td>Обычный пользователь FernieID</td><td>200 000 токенов</td></tr>
@@ -1254,7 +1150,6 @@ data = requests.<span class="tok-fn">post</span>(
   has_plus<span class="tok-ts">: boolean</span>;
   remaining<span class="tok-ts">: number</span>;
 }
-
 <span class="tok-kw">const</span> data<span class="tok-ts">: UsageResponse</span> = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">`https://ferniex-id.vercel.app/api/chat/usage/${userId}`</span>)
   .<span class="tok-fn">then</span>(r =&gt; r.<span class="tok-fn">json</span>());</code></pre>
               </div>
@@ -1272,12 +1167,105 @@ data = requests.<span class="tok-fn">post</span>(
         </div></div>
       </div>
     </section>
-
+    <!-- ══════════ AURIN-CUSTOM ══════════ -->
+    <section class="doc-section" id="ai-custom">
+      <h2><span class="sec-num">13</span> Aurin-Custom — своя персона</h2>
+      <p class="lead">Отдельная модель для случаев, когда готовые персоны Aurin не подходят и приложению нужен ассистент под своим именем, характером и стилем ответа. Вместо системного промпта FernieX-AI по умолчанию модель получает ровно тот промпт, который передашь ты.</p>
+      <h3>Чем отличается от остальных моделей</h3>
+      <ul>
+        <li>Работает на базе <code class="inline">mistral-medium-latest</code>, как и <code class="inline">mistral-medium</code>.</li>
+        <li>Не подставляет собственную персону («Ты — Aurin…») — вместо неё используется твой <code class="inline">system</code>.</li>
+        <li>Не несёт зашитых скиллов вроде <code class="inline">netsearch</code>/<code class="inline">webfetch</code> — если они нужны, добавляй инструкции сам.</li>
+        <li>Базовые правила безопасности FernieX-AI (запрет на оружие, вредоносный код, вред несовершеннолетним и т.п.) остаются в силе, как и для остальных моделей — кастомизация касается только тона, роли и формата ответа.</li>
+      </ul>
+      <div class="endpoint" data-ep>
+        <div class="ep-head" onclick="toggleEp(this)">
+          <span class="ep-method post">POST</span>
+          <span class="ep-path">/api/chat</span>
+          <span class="ep-arrow">▾</span>
+        </div>
+        <div class="ep-body"><div class="ep-inner">
+          <p>Тот же эндпоинт, что и в разделе 10 — просто передай <code class="inline">model: "aurin-custom"</code> и свой <code class="inline">system</code>.</p>
+          <div class="ep-tag">Параметры тела запроса</div>
+          <div class="param-table-wrap"><table class="param-table">
+            <tr><th>Поле</th><th>Тип</th><th>Описание</th></tr>
+            <tr><td class="pname">apiKey<span class="param-req">обязателен</span></td><td>string</td><td>Твой API-ключ</td></tr>
+            <tr><td class="pname">messages<span class="param-req">обязателен</span></td><td>array</td><td><code class="inline">[{ role: 'user', content: '...' }]</code></td></tr>
+            <tr><td class="pname">model<span class="param-req">обязателен</span></td><td>string</td><td>Значение <code class="inline">"aurin-custom"</code></td></tr>
+            <tr><td class="pname">system<span class="param-opt">опционально</span></td><td>string</td><td>Имя, роль, характер и формат ответа — всё, что должна соблюдать модель</td></tr>
+          </table></div>
+          <div class="code-tabs" data-tabs>
+            <div class="code-tabs-nav">
+              <button class="code-tab-btn active" data-lang="javascript" onclick="switchTab(this)">JavaScript</button>
+              <button class="code-tab-btn" data-lang="typescript" onclick="switchTab(this)">TypeScript</button>
+              <button class="code-tab-btn" data-lang="python" onclick="switchTab(this)">Python</button>
+            </div>
+            <div class="code-tab-panel active" data-lang="javascript">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">javascript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code><span class="tok-kw">const</span> data = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/chat'</span>, {
+  method: <span class="tok-str">'POST'</span>,
+  headers: { <span class="tok-str">'Content-Type'</span>: <span class="tok-str">'application/json'</span> },
+  body: <span class="tok-fn">JSON.stringify</span>({
+    apiKey: <span class="tok-str">'fid_твой_ключ'</span>,
+    model: <span class="tok-str">'aurin-custom'</span>,
+    system: <span class="tok-str">'Тебя зовут Марта. Ты дружелюбный консультант книжного магазина, отвечаешь коротко и с лёгким юмором.'</span>,
+    messages: [{ role: <span class="tok-str">'user'</span>, content: <span class="tok-str">'Посоветуй что почитать вечером'</span> }]
+  })
+}).<span class="tok-fn">then</span>(r =&gt; r.<span class="tok-fn">json</span>());
+<span class="tok-com">// { choices: [{ message: { role: 'assistant', content: '...' } }], usage: {...} }</span></code></pre>
+              </div>
+            </div>
+            <div class="code-tab-panel" data-lang="typescript">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">typescript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code><span class="tok-kw">interface</span> <span class="tok-fn">ChatResponse</span> {
+  choices: { message: { role<span class="tok-ts">: string</span>; content<span class="tok-ts">: string</span> } }[];
+  usage: { total_tokens<span class="tok-ts">: number</span> };
+}
+<span class="tok-kw">const</span> data<span class="tok-ts">: ChatResponse</span> = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/chat'</span>, {
+  method: <span class="tok-str">'POST'</span>,
+  headers: { <span class="tok-str">'Content-Type'</span>: <span class="tok-str">'application/json'</span> },
+  body: <span class="tok-fn">JSON.stringify</span>({
+    apiKey: <span class="tok-str">'fid_твой_ключ'</span>,
+    model: <span class="tok-str">'aurin-custom'</span>,
+    system: <span class="tok-str">'Тебя зовут Марта. Ты дружелюбный консультант книжного магазина, отвечаешь коротко и с лёгким юмором.'</span>,
+    messages: [{ role: <span class="tok-str">'user'</span>, content: <span class="tok-str">'Посоветуй что почитать вечером'</span> }]
+  })
+}).<span class="tok-fn">then</span>(r =&gt; r.<span class="tok-fn">json</span>());</code></pre>
+              </div>
+            </div>
+            <div class="code-tab-panel" data-lang="python">
+              <div class="code-wrap">
+                <div class="code-head"><span class="code-lang">python</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
+                <pre><code>data = requests.<span class="tok-fn">post</span>(
+    <span class="tok-str">"https://ferniex-id.vercel.app/api/chat"</span>,
+    json={
+        <span class="tok-str">"apiKey"</span>: <span class="tok-str">"fid_твой_ключ"</span>,
+        <span class="tok-str">"model"</span>: <span class="tok-str">"aurin-custom"</span>,
+        <span class="tok-str">"system"</span>: <span class="tok-str">"Тебя зовут Марта. Ты дружелюбный консультант книжного магазина, отвечаешь коротко и с лёгким юмором."</span>,
+        <span class="tok-str">"messages"</span>: [{<span class="tok-str">"role"</span>: <span class="tok-str">"user"</span>, <span class="tok-str">"content"</span>: <span class="tok-str">"Посоветуй что почитать вечером"</span>}],
+    },
+).<span class="tok-fn">json</span>()
+<span class="tok-com"># { "choices": [{ "message": { "role": "assistant", "content": "..." } }], "usage": {...} }</span></code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="callout info">
+            <div class="callout-ico"><span class="cico cico-bulb"></span></div>
+            <div class="callout-text">Без <code class="inline" style="background:transparent;border:none;padding:0;">system</code> модель отвечает от имени «Aurin-Custom» с нейтральным промптом по умолчанию — это не ошибка, просто нечего кастомизировать.</div>
+          </div>
+          <div class="callout ok">
+            <div class="callout-ico"><span class="cico cico-check"></span></div>
+            <div class="callout-text">Настраивается <b>только тон, роль и формат</b> ответа. Базовые ограничения по опасному и запрещённому контенту сохраняются — как и у остальных моделей Aurin, эта модель их не снимает.</div>
+          </div>
+        </div></div>
+      </div>
+    </section>
     <!-- ══════════ SEARCH ══════════ -->
     <section class="doc-section" id="search">
-      <h2><span class="sec-num">13</span> Веб-поиск</h2>
+      <h2><span class="sec-num">14</span> Веб-поиск</h2>
       <p class="lead">Обёртка над поиском (Serper API с фолбэком на DuckDuckGo) — пригодится, если хочешь дать своему боту доступ к свежим данным без AI-чата.</p>
-
       <div class="endpoint" data-ep>
         <div class="ep-head" onclick="toggleEp(this)">
           <span class="ep-method get">GET</span>
@@ -1309,7 +1297,6 @@ data = requests.<span class="tok-fn">post</span>(
                 <div class="code-head"><span class="code-lang">typescript</span><button class="code-copy" onclick="copyCode(this)">Копировать</button></div>
                 <pre><code><span class="tok-kw">interface</span> <span class="tok-fn">SearchResult</span> { title<span class="tok-ts">: string</span>; url<span class="tok-ts">: string</span>; snippet<span class="tok-ts">: string</span>; }
 <span class="tok-kw">interface</span> <span class="tok-fn">SearchResponse</span> { success<span class="tok-ts">: boolean</span>; results<span class="tok-ts">: SearchResult[]</span>; query<span class="tok-ts">: string</span>; }
-
 <span class="tok-kw">const</span> data<span class="tok-ts">: SearchResponse</span> = <span class="tok-kw">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">'https://ferniex-id.vercel.app/api/search?q=погода+в+москве'</span>)
   .<span class="tok-fn">then</span>(r =&gt; r.<span class="tok-fn">json</span>());</code></pre>
               </div>
@@ -1328,12 +1315,10 @@ data = requests.<span class="tok-fn">post</span>(
         </div></div>
       </div>
     </section>
-
     <!-- ══════════ TELEGRAM ══════════ -->
     <section class="doc-section" id="telegram">
-      <h2><span class="sec-num">14</span> Сообщения в Telegram</h2>
+      <h2><span class="sec-num">15</span> Сообщения в Telegram</h2>
       <p class="lead">Отправка произвольного HTML-сообщения пользователю в Telegram напрямую от имени системы — удобно для собственных уведомлений (например, статус заявки в твоём приложении).</p>
-
       <div class="endpoint" data-ep>
         <div class="ep-head" onclick="toggleEp(this)">
           <span class="ep-method post">POST</span>
@@ -1376,7 +1361,6 @@ data = requests.<span class="tok-fn">post</span>(
     body: <span class="tok-fn">JSON.stringify</span>({ telegram_id: telegramId, text })
   });
 }
-
 <span class="tok-fn">sendTelegramMessage</span>(<span class="tok-str">'7406372338'</span>, <span class="tok-str">'✅ &lt;b&gt;Твоя заявка одобрена!&lt;/b&gt;'</span>);</code></pre>
               </div>
             </div>
@@ -1396,12 +1380,10 @@ data = requests.<span class="tok-fn">post</span>(
         </div></div>
       </div>
     </section>
-
     <!-- ══════════ ERRORS ══════════ -->
     <section class="doc-section" id="errors">
-      <h2><span class="sec-num">15</span> Коды ошибок</h2>
+      <h2><span class="sec-num">16</span> Коды ошибок</h2>
       <p class="lead">Почти все эндпоинты возвращают HTTP 200 с полем <code class="inline">success: false</code> и текстом ошибки в <code class="inline">error</code> — исключение составляет <code class="inline">/api/chat</code>, где используются настоящие HTTP-статусы.</p>
-
       <div class="err-table-wrap"><table class="err-table">
         <tr><th>Ошибка</th><th>Где встречается</th><th>Что значит</th></tr>
         <tr><td class="errcode">no_telegram</td><td>balance/get, edit/balance, cases/buy</td><td>У пользователя не привязан Telegram</td></tr>
@@ -1412,29 +1394,25 @@ data = requests.<span class="tok-fn">post</span>(
         <tr><td class="errcode">— (HTTP 429)</td><td>chat</td><td>Превышен суточный лимит токенов</td></tr>
         <tr><td class="errcode">— (HTTP 401)</td><td>chat</td><td>Не передан или недействителен API-ключ</td></tr>
       </table></div>
-
       <div class="callout danger">
         <div class="callout-ico"><span class="cico cico-forbidden"></span></div>
         <div class="callout-text">Повторные попытки обойти защиту AI-чата фиксируются системой <b>FernieX Defender</b>: после 10 предупреждений аккаунт блокируется в чате навсегда.</div>
       </div>
     </section>
-
     <!-- ══════════ LIMITS ══════════ -->
     <section class="doc-section" id="limits">
-      <h2><span class="sec-num">16</span> Лимиты и защита</h2>
+      <h2><span class="sec-num">17</span> Лимиты и защита</h2>
       <ul>
         <li><b>10 API-ключей</b> максимум на аккаунт (не действует для сайт-администраторов).</li>
         <li><b>Коды 2FA и сброса пароля</b> живут 5–10 минут и одноразовые.</li>
         <li><b>Пополнение баланса</b> (<code class="inline">action: "add"</code>) доступно только ключам с типом «Бот».</li>
-        <li><b>AI-чат</b> имеет суточные лимиты токенов по трём уровням (см. раздел 12) и фильтр джейлбрейков на входящих сообщениях.</li>
+        <li><b>AI-чат</b> имеет суточные лимиты токенов по трём уровням (см. раздел 12) и фильтр джейлбрейков на входящих сообщениях — включая <code class="inline">aurin-custom</code>.</li>
         <li>Каждый запрос через ключ пишется в его лог (IP, время, действие) — историю можно посмотреть в личном кабинете.</li>
       </ul>
     </section>
-
     <!-- ══════════ FAQ ══════════ -->
     <section class="doc-section" id="faq">
-      <h2><span class="sec-num">17</span> FAQ</h2>
-
+      <h2><span class="sec-num">18</span> FAQ</h2>
       <div class="card">
         <h3 style="margin-top:0;">Можно ли использовать ключ на бэкенде и фронтенде одновременно?</h3>
         <p style="margin-bottom:0;">Технически да, но операции с балансом (особенно <code class="inline">add</code>) лучше держать только на бэкенде — если ключ утечёт из клиентского кода, им сможет воспользоваться кто угодно.</p>
@@ -1449,20 +1427,16 @@ data = requests.<span class="tok-fn">post</span>(
       </div>
       <div class="card" style="margin-bottom:0;">
         <h3 style="margin-top:0;">Можно ли выбрать другую модель для AI-чата?</h3>
-        <p style="margin-bottom:0;">Да — <code class="inline">aurin-lite</code> (быстрая), <code class="inline">mistral-medium</code>, <code class="inline">aurin</code> (базовая) и <code class="inline">aurin-pro</code> (с внутренним рассуждением через <code class="inline">&lt;thinking&gt;</code>, отдаёт только чистый результат).</p>
+        <p style="margin-bottom:0;">Да — <code class="inline">aurin-lite</code> (быстрая), <code class="inline">mistral-medium</code>, <code class="inline">aurin</code> (базовая), <code class="inline">aurin-pro</code> (с внутренним рассуждением через <code class="inline">&lt;thinking&gt;</code>, отдаёт только чистый результат) и <code class="inline">aurin-custom</code> (своя персона и системный промпт, см. раздел 13).</p>
       </div>
     </section>
-
     <div class="doc-footer">
       <div class="footer-logo"><div class="tb-dot"></div>FernieID API</div>
       <div class="footer-txt">© 2026 FernieX · Документация для разработчиков</div>
     </div>
-
   </main>
 </div>
-
 <div class="totop" id="totop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
-
 <script>
 // Раскрытие эндпоинтов
 function toggleEp(head){
@@ -1470,7 +1444,6 @@ function toggleEp(head){
   document.querySelectorAll('.endpoint').forEach(e=>{ if(e!==ep) e.classList.remove('open'); });
   ep.classList.toggle('open');
 }
-
 // Переключение вкладок с языками
 function switchTab(btn){
   const tabs = btn.closest('.code-tabs');
@@ -1479,7 +1452,6 @@ function switchTab(btn){
   btn.classList.add('active');
   tabs.querySelector(`.code-tab-panel[data-lang="${btn.dataset.lang}"]`).classList.add('active');
 }
-
 // Копирование кода
 function copyCode(btn){
   const pre = btn.closest('.code-wrap').querySelector('code');
@@ -1490,7 +1462,6 @@ function copyCode(btn){
     setTimeout(()=>{ btn.textContent='Копировать'; btn.classList.remove('copied'); }, 1800);
   });
 }
-
 // Навигация сайдбара + скролл-спай
 const links = document.querySelectorAll('.side-link');
 const sections = document.querySelectorAll('.doc-section');
@@ -1501,7 +1472,6 @@ links.forEach(link=>{
     document.getElementById('sidebar').classList.remove('open');
   });
 });
-
 const spy = new IntersectionObserver((entries)=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
@@ -1512,17 +1482,14 @@ const spy = new IntersectionObserver((entries)=>{
   });
 }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
 sections.forEach(s=>spy.observe(s));
-
 // Мобильное меню
 document.getElementById('menuToggle').addEventListener('click', ()=>{
   document.getElementById('sidebar').classList.toggle('open');
 });
-
 // Кнопка "наверх"
 window.addEventListener('scroll', ()=>{
   document.getElementById('totop').classList.toggle('show', window.scrollY > 500);
 });
-
 // Первая ссылка активна по умолчанию
 links[0].classList.add('active');
 </script>
