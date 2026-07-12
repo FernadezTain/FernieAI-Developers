@@ -928,7 +928,7 @@ data = requests.<span class="tok-fn">post</span>(
             <tr><td class="pname">apiKey<span class="param-req">обязателен</span></td><td>string</td><td>Твой API-ключ</td></tr>
             <tr><td class="pname">messages<span class="param-req">обязателен</span></td><td>array</td><td><code class="inline">[{ role: 'user', content: '...' }]</code></td></tr>
             <tr><td class="pname">model<span class="param-opt">опционально</span></td><td>string</td><td><code class="inline">aurin-lite</code> / <code class="inline">mistral-medium</code> / <code class="inline">aurin</code> / <code class="inline">aurin-pro</code> / <code class="inline">aurin-custom</code></td></tr>
-            <tr><td class="pname">system<span class="param-opt">опционально</span></td><td>string</td><td>Свой системный промпт. Учитывается для всех моделей, но по-настоящему нужен только для <code class="inline">aurin-custom</code> — см. раздел 13.</td></tr>
+            <tr><td class="pname">messages[0]<span class="param-opt">опционально</span></td><td>object</td><td>Системный промпт передаётся как сообщение <code class="inline">{ role: 'system', content: '...' }</code> первым элементом массива <code class="inline">messages</code>. Учитывается для всех моделей, но по-настоящему нужен только для <code class="inline">aurin-custom</code> — см. раздел 13.</td></tr>
             <tr><td class="pname">userId<span class="param-opt">опционально</span></td><td>number</td><td>ID пользователя FernieID — даёт больший дневной лимит токенов вместо анонимного</td></tr>
             <tr><td class="pname">max_tokens<span class="param-opt">опционально</span></td><td>number</td><td>По умолчанию 8192</td></tr>
             <tr><td class="pname">stream<span class="param-opt">опционально</span></td><td>boolean</td><td><code class="inline">false</code> для этого эндпоинта</td></tr>
@@ -1174,7 +1174,7 @@ data = requests.<span class="tok-fn">post</span>(
       <h3>Чем отличается от остальных моделей</h3>
       <ul>
         <li>Работает на базе <code class="inline">Aurin-medium</code>, как и <code class="inline">Aurin-medium</code>.</li>
-        <li>Не подставляет собственную персону («Ты — Aurin…») — вместо неё используется твой <code class="inline">system</code>.</li>
+        <li>Не подставляет собственную персону («Ты — Aurin…») — вместо неё используется системное сообщение, которое ты передашь первым элементом <code class="inline">messages</code>.</li>
         <li>Не несёт зашитых скиллов вроде <code class="inline">netsearch</code>/<code class="inline">webfetch</code> — если они нужны, добавляй инструкции сам.</li>
       </ul>
       <div class="endpoint" data-ep>
@@ -1191,7 +1191,7 @@ data = requests.<span class="tok-fn">post</span>(
             <tr><td class="pname">apiKey<span class="param-req">обязателен</span></td><td>string</td><td>Твой API-ключ</td></tr>
             <tr><td class="pname">messages<span class="param-req">обязателен</span></td><td>array</td><td><code class="inline">[{ role: 'user', content: '...' }]</code></td></tr>
             <tr><td class="pname">model<span class="param-req">обязателен</span></td><td>string</td><td>Значение <code class="inline">"aurin-custom"</code></td></tr>
-            <tr><td class="pname">system<span class="param-opt">опционально</span></td><td>string</td><td>Имя, роль, характер и формат ответа — всё, что должна соблюдать модель</td></tr>
+            <tr><td class="pname">messages[0]<span class="param-opt">опционально</span></td><td>object</td><td>Передай <code class="inline">{ role: 'system', content: '...' }</code> первым элементом <code class="inline">messages</code> — имя, роль, характер и формат ответа, всё, что должна соблюдать модель</td></tr>
           </table></div>
           <div class="code-tabs" data-tabs>
             <div class="code-tabs-nav">
@@ -1208,8 +1208,10 @@ data = requests.<span class="tok-fn">post</span>(
   body: <span class="tok-fn">JSON.stringify</span>({
     apiKey: <span class="tok-str">'fid_твой_ключ'</span>,
     model: <span class="tok-str">'aurin-custom'</span>,
-    system: <span class="tok-str">'Тебя зовут Марта. Ты дружелюбный консультант книжного магазина, отвечаешь коротко и с лёгким юмором.'</span>,
-    messages: [{ role: <span class="tok-str">'user'</span>, content: <span class="tok-str">'Посоветуй что почитать вечером'</span> }]
+    messages: [
+      { role: <span class="tok-str">'system'</span>, content: <span class="tok-str">'Тебя зовут Марта. Ты дружелюбный консультант книжного магазина, отвечаешь коротко и с лёгким юмором.'</span> },
+      { role: <span class="tok-str">'user'</span>, content: <span class="tok-str">'Посоветуй что почитать вечером'</span> }
+    ]
   })
 }).<span class="tok-fn">then</span>(r =&gt; r.<span class="tok-fn">json</span>());
 <span class="tok-com">// { choices: [{ message: { role: 'assistant', content: '...' } }], usage: {...} }</span></code></pre>
@@ -1228,8 +1230,10 @@ data = requests.<span class="tok-fn">post</span>(
   body: <span class="tok-fn">JSON.stringify</span>({
     apiKey: <span class="tok-str">'fid_твой_ключ'</span>,
     model: <span class="tok-str">'aurin-custom'</span>,
-    system: <span class="tok-str">'Тебя зовут Марта. Ты дружелюбный консультант книжного магазина, отвечаешь коротко и с лёгким юмором.'</span>,
-    messages: [{ role: <span class="tok-str">'user'</span>, content: <span class="tok-str">'Посоветуй что почитать вечером'</span> }]
+    messages: [
+      { role: <span class="tok-str">'system'</span>, content: <span class="tok-str">'Тебя зовут Марта. Ты дружелюбный консультант книжного магазина, отвечаешь коротко и с лёгким юмором.'</span> },
+      { role: <span class="tok-str">'user'</span>, content: <span class="tok-str">'Посоветуй что почитать вечером'</span> }
+    ]
   })
 }).<span class="tok-fn">then</span>(r =&gt; r.<span class="tok-fn">json</span>());</code></pre>
               </div>
@@ -1242,8 +1246,10 @@ data = requests.<span class="tok-fn">post</span>(
     json={
         <span class="tok-str">"apiKey"</span>: <span class="tok-str">"fid_твой_ключ"</span>,
         <span class="tok-str">"model"</span>: <span class="tok-str">"aurin-custom"</span>,
-        <span class="tok-str">"system"</span>: <span class="tok-str">"Тебя зовут Марта. Ты дружелюбный консультант книжного магазина, отвечаешь коротко и с лёгким юмором."</span>,
-        <span class="tok-str">"messages"</span>: [{<span class="tok-str">"role"</span>: <span class="tok-str">"user"</span>, <span class="tok-str">"content"</span>: <span class="tok-str">"Посоветуй что почитать вечером"</span>}],
+        <span class="tok-str">"messages"</span>: [
+            {<span class="tok-str">"role"</span>: <span class="tok-str">"system"</span>, <span class="tok-str">"content"</span>: <span class="tok-str">"Тебя зовут Марта. Ты дружелюбный консультант книжного магазина, отвечаешь коротко и с лёгким юмором."</span>},
+            {<span class="tok-str">"role"</span>: <span class="tok-str">"user"</span>, <span class="tok-str">"content"</span>: <span class="tok-str">"Посоветуй что почитать вечером"</span>},
+        ],
     },
 ).<span class="tok-fn">json</span>()
 <span class="tok-com"># { "choices": [{ "message": { "role": "assistant", "content": "..." } }], "usage": {...} }</span></code></pre>
@@ -1252,8 +1258,7 @@ data = requests.<span class="tok-fn">post</span>(
           </div>
           <div class="callout info">
             <div class="callout-ico"><span class="cico cico-bulb"></span></div>
-            <div class="callout-text">Без <code class="inline" style="background:transparent;border:none;padding:0;">system</code> модель отвечает от имени «Aurin-Custom» с нейтральным промптом по умолчанию — это не ошибка, просто нечего кастомизировать.</div>
-          </div>
+            <div class="callout-text">Без сообщения с <code class="inline" style="background:transparent;border:none;padding:0;">role: 'system'</code> модель отвечает от имени «Aurin-Custom» с нейтральным промптом по умолчанию — это не ошибка, просто нечего кастомизировать.</div>
           <div class="callout ok">
             <div class="callout-ico"><span class="cico cico-check"></span></div>
             <div class="callout-text">Настраивается <b>только тон, роль и формат</b> ответа. Базовые ограничения по опасному и запрещённому контенту сохраняются — как и у остальных моделей Aurin, эта модель их не снимает.</div>
